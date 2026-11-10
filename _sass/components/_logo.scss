@@ -5,6 +5,8 @@
   }
   img {
     max-width: unset;
+    display: block;
+    object-fit: contain;
   }
   a {
     display: block;

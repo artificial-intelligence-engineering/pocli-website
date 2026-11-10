@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
+  <link rel="icon" type="image/jpeg" href="{{ '/images/logo/pocli-logo.jpg' | relative_url }}">
   <!-- Google Fonts CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   {% if page.meta_title %}<meta property="og:title" content="{{ page.meta_title }}"/>{% else %}<meta property="og:title" content="{{ page.title }}"/>{% endif %}
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="{{ page.url | absolute_url }}"/>
-  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>{% endif %}
+  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>{% else %}<meta property="og:image" content="{{ '/images/logo/pocli-logo.jpg' | absolute_url }}"/>{% endif %}
   {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
   <meta name="twitter:card" content="summary"/>
 </head>

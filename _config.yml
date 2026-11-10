@@ -4,12 +4,12 @@ permalink: pretty
 title: 'POCLI'
 
 logo:
-  mobile: "images/logo/logo-mobile.svg"
-  mobile_height: "32px"
-  mobile_width: "32px"
-  desktop: "images/logo/logo.svg"
-  desktop_height: "36px"
-  desktop_width: "140px"
+  mobile: "images/logo/pocli-logo.jpg"
+  mobile_height: "42px"
+  mobile_width: "42px"
+  desktop: "images/logo/pocli-logo.jpg"
+  desktop_height: "72px"
+  desktop_width: "72px"
 
 home:
   limit_services: 6
