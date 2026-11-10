@@ -1,0 +1,30 @@
+main:
+  - name: "Capabilities"
+    url: "/services/"
+    weight: 2
+  - name: "AI Team"
+    url: "/team/"
+    weight: 3
+  - name: "Architecture"
+    url: "/about/"
+    weight: 4
+  - name: "Quick Start"
+    url: "/quickstart/"
+    weight: 5
+
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "Capabilities"
+    url: "/services/"
+    weight: 2
+  - name: "AI Team"
+    url: "/team/"
+    weight: 3
+  - name: "Architecture"
+    url: "/about/"
+    weight: 4
+  - name: "Quick Start"
+    url: "/quickstart/"
+    weight: 5

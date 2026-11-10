@@ -1,0 +1,4 @@
+repo: 'artificial-intelligence-engineering/pocli'
+install_cmd: 'npm run pocli'
+contact_button_link: '/quickstart/'
+contact_button_label: 'Quick Start'

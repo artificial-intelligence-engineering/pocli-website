@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Human-Governed SDLC",
+    "description": "You are the Product Owner. Non-bypassable approval gates govern every phase from Architecture to Final Acceptance.",
+    "image": {
+      "url": "images/features/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Minimal Harness (~200 Tokens)",
+    "description": "Role-scoped prompts and 3-tier SQLite context assembly keep 90–95% of your context window free with sub-second TTFT.",
+    "image": {
+      "url": "images/features/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Empirical QA & Sandboxing",
+    "description": "Independent QA executes real Robot Framework suites in isolated scripts/.venv environments inside OS child processes.",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  }
+]
