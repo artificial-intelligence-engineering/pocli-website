@@ -30,6 +30,51 @@
           }
         }
       }
+      &.lang-menu-item {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.header-mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: $white-offset;
+  border: 1px solid rgba($primary, 0.35);
+  border-radius: 6px;
+  padding: 4px 8px;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-family: $font-family-base;
+  .lang-sep {
+    color: rgba($black, 0.3);
+    user-select: none;
+  }
+  .lang-btn {
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: $black;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+    &.is-active {
+      background-color: $primary;
+      color: #ffffff;
     }
   }
 }

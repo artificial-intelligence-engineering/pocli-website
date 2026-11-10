@@ -1,12 +1,19 @@
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[current_lang] %}
 <div class='header'>
   <div class="container">
     <div class="logo">
-      <a href="{{ '/' | relative_url }}"><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></a>
+      <a href="{{ t.home_url | relative_url }}"><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></a>
     </div>
     <div class="logo-mobile">
-      <a href="{{ '/' | relative_url }}"><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></a>
+      <a href="{{ t.home_url | relative_url }}"><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></a>
     </div>
     {% include main-menu.html %}
-    {% include hamburger.html %}
+    <div class="header-mobile-actions">
+      <div class="lang-mobile-pill">
+        {% include lang-switcher.html %}
+      </div>
+      {% include hamburger.html %}
+    </div>
   </div>
 </div>

@@ -2,6 +2,8 @@
 layout: default
 bodyClass: "page-teams"
 ---
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign lang_teams = site.team | where: "lang", current_lang | sort: "weight" %}
 
 <div class="intro">
   <div class="container">
@@ -20,7 +22,7 @@ bodyClass: "page-teams"
 
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
+    {% assign promoted_teams = lang_teams | where: "promoted", true %}
     {% for team in promoted_teams %}
     <div class="col-12 col-md-6 mb-3">
       <div class="team team-summary team-summary-large">
@@ -39,8 +41,7 @@ bodyClass: "page-teams"
     {% endfor %}
   </div>
   <div class="row pt-4 pb-6">
-    {% assign all_teams = site.team | sort: "weight" %}
-    {% for team in all_teams %}
+    {% for team in lang_teams %}
     {% unless team.promoted %}
     <div class="col-12 col-md-6 mb-3">
       <div class="team team-summary">

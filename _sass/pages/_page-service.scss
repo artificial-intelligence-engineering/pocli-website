@@ -1,4 +1,8 @@
 .page-service {
+  .title {
+    font-family: $font-family-base;
+    font-weight: 700;
+  }
   .content {
     > p {
       &:first-of-type {

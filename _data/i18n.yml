@@ -1,0 +1,21 @@
+en:
+  home_url: "/"
+  services_url: "/services/"
+  quickstart_url: "/quickstart/"
+  quickstart_label: "Quick Start"
+  view_all_capabilities: "View All Capabilities"
+  github_label: "GitHub"
+  launch_label: "Launch"
+  copy_label: "COPY"
+  copied_label: "COPIED"
+
+es:
+  home_url: "/es/"
+  services_url: "/es/services/"
+  quickstart_url: "/es/quickstart/"
+  quickstart_label: "Inicio Rápido"
+  view_all_capabilities: "Ver Todas las Capacidades"
+  github_label: "GitHub"
+  launch_label: "Arrancar"
+  copy_label: "COPY"
+  copied_label: "COPIADO"

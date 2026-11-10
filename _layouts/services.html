@@ -2,6 +2,7 @@
 layout: default
 bodyClass: "page-services"
 ---
+{% assign current_lang = page.lang | default: 'en' %}
 
 <div class="intro">
   <div class="container">
@@ -20,7 +21,7 @@ bodyClass: "page-services"
 
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% assign sorted_services = site.services | sort: 'weight' %}
+    {% assign sorted_services = site.services | where: "lang", current_lang | sort: "weight" %}
     {% for service in sorted_services %}
     <div class="col-12 col-md-6 mb-3">
       <div class="service service-summary">

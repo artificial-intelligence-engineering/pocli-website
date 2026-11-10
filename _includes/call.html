@@ -1,15 +1,16 @@
-<div class="call">
-  <div class="call-box-top">
-    {% if site.data.contact.repo %}
-      <div class="call-phone"><strong>GitHub: </strong><a href="https://github.com/{{ site.data.contact.repo }}" target="_blank" rel="noopener">{{ site.data.contact.repo }}</a></div>
-    {% endif %}
-    {% if site.data.contact.install_cmd %}
-      <div class="call-email"><strong>Launch: </strong><code>{{ site.data.contact.install_cmd }}</code></div>
-    {% endif %}
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[current_lang] %}
+<div class="install-box">
+  <div class="install-box-cmd">
+    <span class="install-prompt" aria-hidden="true">$</span>
+    <code id="pocli-install-cmd">{{ site.data.contact.install_cmd }}</code>
   </div>
-  {% if include.show_button %}
-    <div class="call-box-bottom">
-      <a href="{{ site.data.contact.contact_button_link | relative_url }}" class="button">{{ site.data.contact.contact_button_label | default: "Quick Start" }}</a>
-    </div>
-  {% endif %}
+  <button
+    type="button"
+    class="install-copy-btn"
+    data-copy-label="[ {{ t.copy_label }} ]"
+    data-copied-label="[ {{ t.copied_label }} ]"
+    onclick="(function(btn){var txt=document.getElementById('pocli-install-cmd').textContent.trim();if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){btn.textContent=btn.getAttribute('data-copied-label');btn.classList.add('is-copied');setTimeout(function(){btn.textContent=btn.getAttribute('data-copy-label');btn.classList.remove('is-copied');},1800);});}})(this)"
+    aria-label="Copy install command"
+  >[ {{ t.copy_label }} ]</button>
 </div>

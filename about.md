@@ -14,10 +14,10 @@ Static role harnesses (`behavior/system/*.md`, only **150–250 tokens** per age
 ```text
 behavior/system/*.md (150-250 tokens)
         +
-$HOME/.pocli/pocli.sqlite (Tier 1 Normative + Tier 2 Compaction + Tier 3 Recent DAG)
+SQLite Context (Tier 1 + Tier 2 Compaction + Tier 3 DAG)
         │
-        ▼  assembled by src/runtime/orchestrator.ts
-Linux Child Process Worker (JSON-RPC 2.0 stdio | LOCAL_PROCESS / LINUX_BWRAP / OCI_CONTAINER)
+        ▼  src/runtime/orchestrator.ts
+Linux Child Process (JSON-RPC 2.0 stdio | bwrap / OCI)
 ```
 
 This multi-process design guarantees that agent inference never blocks the interactive fullscreen Ink Command Center and never leaks conversational state across roles.

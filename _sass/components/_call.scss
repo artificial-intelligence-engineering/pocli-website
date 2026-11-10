@@ -1,60 +1,76 @@
-.call {
-  position: relative;
-  overflow: hidden;
-  background-color: $white-offset;
-  border-radius: 4px;
-  // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  width: 100%;
+.install-box {
+  background-color: #1d2129;
+  border: 1px solid #323846;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-top: 12px;
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  z-index: 2;
-  @include media-breakpoint-up(sm) {
-    align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  @include media-breakpoint-up(md) {
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
   }
-  .call-box-top {
-    flex: 1 0 auto;
-    padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  .install-box-cmd {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    .install-prompt {
+      color: #6b7280;
+      user-select: none;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    code {
+      background: transparent;
+      color: #e5e7eb;
+      font-family: inherit;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .install-copy-btn {
+    flex-shrink: 0;
+    align-self: flex-end;
     @include media-breakpoint-up(md) {
+      align-self: center;
     }
-  }
-  .call-box-bottom {
-    flex: auto;
-    padding: 20px;
-    border-top: 1px solid darken($white-offset, 5%);
-    @include media-breakpoint-up(sm) {
-      flex: 0 0 auto;
-      border: none;
+    background-color: #242934;
+    border: 1px solid #363d4d;
+    border-radius: 4px;
+    color: #7cb7ff;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: #2d3442;
+      border-color: #4b556b;
+      color: #a5ceff;
     }
-  }
-  .call-name {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  .call-phone {
-    margin-bottom: 5px;
-  }
-  .call-email {
-    a {
-      color: $black;
-    }
-  }
-  strong {
-    font-weight: bold;
-  }
-  svg {
-    fill: lighten($secondary, 40%);
-    position: absolute;
-    bottom: -9px;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    @include media-breakpoint-up(sm) {
-      width: 120px;
-      height: 120px;
+
+    &.is-copied {
+      border-color: #22c55e;
+      color: #86efac;
     }
   }
 }

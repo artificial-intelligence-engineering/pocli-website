@@ -1,15 +1,15 @@
-baseurl: '/pocli-website'
+baseurl: ''
 url: 'https://artificial-intelligence-engineering.github.io'
 permalink: pretty
 title: 'POCLI'
 
 logo:
-  mobile: "images/logo/pocli-logo.jpg"
-  mobile_height: "42px"
-  mobile_width: "42px"
-  desktop: "images/logo/pocli-logo.jpg"
-  desktop_height: "72px"
-  desktop_width: "72px"
+  mobile: "images/logo/pocli-logo.png"
+  mobile_height: "84px"
+  mobile_width: "84px"
+  desktop: "images/logo/pocli-logo.png"
+  desktop_height: "144px"
+  desktop_width: "144px"
 
 home:
   limit_services: 6
@@ -25,17 +25,49 @@ collections:
 defaults:
   - scope:
       path: ""
+    values:
+      lang: "en"
+  - scope:
+      path: "es"
+    values:
+      lang: "es"
+  - scope:
+      path: ""
       type: "services"
     values:
       layout: "service"
+      lang: "en"
+  - scope:
+      path: "_services/es"
+      type: "services"
+    values:
+      layout: "service"
+      lang: "es"
   - scope:
       path: ""
       type: "team"
     values:
       layout: "team"
+      lang: "en"
+  - scope:
+      path: "_team/es"
+      type: "team"
+    values:
+      layout: "team"
+      lang: "es"
 
 sass:
   style: compressed
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+    - if-function
+    - abs-percent
+    - slash-div
+    - strict-unary
+    - function-units
 
 plugins:
   - jekyll-environment-variables

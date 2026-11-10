@@ -6,9 +6,24 @@ permalink: "/quickstart/"
 bodyClass: page-about
 ---
 
-Get started with **POCLI** in minutes on Linux with Node.js 24 LTS.
+Get started with **POCLI** in seconds on Linux.
 
-## 1. Clone & Build
+## 1. One-Command Install (Recommended)
+
+Downloads the latest Linux release tarball from GitHub Releases, provisions standalone Node.js LTS automatically if missing, and installs the `pocli` launcher into `~/.local/bin/pocli`:
+
+```bash
+curl -fsSL https://artificial-intelligence-engineering.github.io/pocli/install.sh | sh
+```
+
+Then configure your LLM provider key and launch:
+
+```bash
+pocli auth status
+pocli
+```
+
+## 2. Install from Source (Development)
 
 ```bash
 git clone https://github.com/artificial-intelligence-engineering/pocli.git
@@ -17,28 +32,28 @@ npm install
 npm run build
 ```
 
-## 2. Launch the Command Center
+## 3. Essential CLI Commands
 
 ```bash
 # Interactive fullscreen TUI (Ink)
-npm run pocli
+pocli
 
 # Generate a 100% self-contained HTML PM Status Report
-npx tsx src/cli.ts report <project-name>
+pocli report <project-name>
 
 # Inspect the central SQLite database REPL ($HOME/.pocli/pocli.sqlite)
-npm run pocli -- db
-npm run pocli -- db "SELECT id, name, phase FROM projects;" --format json
+pocli db
+pocli db "SELECT id, name, phase FROM projects;" --format json
 
 # Configure models globally or per-agent
-npm run pocli -- models
-npm run pocli -- models developer ollama/qwen2.5-coder:14b
+pocli models
+pocli models developer ollama/qwen2.5-coder:14b
 
-# Run the full test suite (24 test files / 178 tests)
+# Run the full test suite from source
 npm test
 ```
 
-## 3. Essential Interactive TUI Commands
+## 4. Essential Interactive TUI Commands
 
 Press **`Ctrl+Tab`** at any time to switch between the **Clean OpenCode View** and the **Multipanel Command Center**. Type **`/`** to open the interactive command menu:
 
@@ -55,7 +70,7 @@ Press **`Ctrl+Tab`** at any time to switch between the **Clean OpenCode View** a
 | `/db` | Run SQL queries or dot-commands (`.tables`, `.experts`, `.stats`) inside the TUI. |
 | `/settings` | Switch UI language (`en`/`es`), color themes, and central working directory. |
 
-## 4. Customizing Agent Prompts
+## 5. Customizing Agent Prompts
 
 Override any agent's system prompt cleanly without modifying the repository:
 
@@ -65,7 +80,7 @@ cp behavior/system/developer.md ~/.pocli/behavior/system/developer.md
 # Edit ~/.pocli/behavior/system/developer.md to inject team conventions
 ```
 
-## 5. Community & Source
+## 6. Community & Source
 
 - **Main Repository**: [github.com/artificial-intelligence-engineering/pocli](https://github.com/artificial-intelligence-engineering/pocli)
 - **Issues & Feature Requests**: [github.com/artificial-intelligence-engineering/pocli/issues](https://github.com/artificial-intelligence-engineering/pocli/issues)

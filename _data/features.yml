@@ -1,0 +1,40 @@
+en:
+  - title: "Human-Governed SDLC"
+    description: "You are the Product Owner. Non-bypassable approval gates govern every phase from Architecture to Final Acceptance."
+    image:
+      url: "images/features/noun_The Process_1885341.svg"
+      width: 80
+      height: 80
+  - title: "Minimal Harness (~200 Tokens)"
+    description: "Role-scoped prompts and 3-tier SQLite context assembly keep 90–95% of your context window free with sub-second TTFT."
+    image:
+      url: "images/features/noun_branding_1885335.svg"
+      width: 80
+      height: 80
+  - title: "Empirical QA & Sandboxing"
+    description: "Independent QA executes real Robot Framework suites in isolated scripts/.venv environments inside OS child processes."
+    image:
+      url: "images/features/noun_3d modeling_1885342.svg"
+      width: 80
+      height: 80
+
+es:
+  - title: "SDLC Gobernado por Humanos"
+    description: "Tú eres el Product Owner. Puertas de aprobación no evitables controlan cada fase desde Arquitectura hasta la Aceptación Final."
+    image:
+      url: "images/features/noun_The Process_1885341.svg"
+      width: 80
+      height: 80
+  - title: "Minimal Harness (~200 Tokens)"
+    description: "Prompts acotados por rol y ensamblado contextual en 3 niveles dejan libre el 90–95% de la ventana de contexto con TTFT sub-segundo."
+    image:
+      url: "images/features/noun_branding_1885335.svg"
+      width: 80
+      height: 80
+  - title: "QA Empírica y Sandboxing"
+    description: "QA independiente ejecuta suites reales de Robot Framework en entornos scripts/.venv aislados dentro de procesos Linux."
+    image:
+      url: "images/features/noun_3d modeling_1885342.svg"
+      width: 80
+      height: 80
+

@@ -1,11 +1,14 @@
+{% assign current_lang = page.lang | default: 'en' %}
 <div class="footer">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <h2 class="footer-title">{{site.title}}</h2>
+          <a class="footer-github-link" href="https://github.com/artificial-intelligence-engineering/pocli" target="_blank" rel="noopener" title="POCLI on GitHub" aria-label="POCLI GitHub Repository">
+            <img src="{{ '/images/social/github.svg' | relative_url }}" width="26" height="26" alt="POCLI GitHub" />
+          </a>
           <ul>
-            {% assign footermenu = site.data.menus.footer | sort: 'weight'  %}
+            {% assign footermenu = site.data.menus[current_lang].footer | sort: 'weight' %}
             {% for item in footermenu %}
             <li class="{% if item.url == page.url %}active{% endif %}">
               <a href="{{ item.url | relative_url }}">{{ item.name }}</a>

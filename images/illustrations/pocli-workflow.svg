@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="540" height="360" viewBox="0 0 540 360" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="500" height="320" rx="12" fill="#FFF6F8" stroke="#F88379" stroke-width="2"/>
+  <text x="270" y="54" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="20" fill="#2F2F41">Governed Multi-Agent SDLC</text>
+
+  <!-- Step 1: PO + Architect -->
+  <rect x="46" y="78" width="195" height="62" rx="8" fill="#2F2F41"/>
+  <text x="143" y="104" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="12" fill="#FFFFFF">Product Owner &amp; Architect</text>
+  <text x="143" y="124" text-anchor="middle" font-family="monospace" font-size="10" fill="#F88379">ARCH-001 + SPEC-001 (/approve)</text>
+
+  <!-- Arrow Right -->
+  <line x1="241" y1="109" x2="294" y2="109" stroke="#E5261F" stroke-width="2.5"/>
+  <polygon points="294,104 304,109 294,114" fill="#E5261F"/>
+
+  <!-- Step 2: Senior Developer -->
+  <rect x="304" y="78" width="190" height="62" rx="8" fill="#2F2F41"/>
+  <text x="399" y="104" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="12" fill="#FFFFFF">Senior Developer</text>
+  <text x="399" y="124" text-anchor="middle" font-family="monospace" font-size="10" fill="#86EFAC">repos/*.git · 100% Unit Tests</text>
+
+  <!-- Arrow Down to QA -->
+  <line x1="399" y1="140" x2="399" y2="180" stroke="#E5261F" stroke-width="2.5"/>
+  <polygon points="394,180 399,190 404,180" fill="#E5261F"/>
+
+  <!-- Step 3: Independent QA -->
+  <rect x="278" y="190" width="216" height="66" rx="8" fill="#E5261F"/>
+  <text x="386" y="216" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="12" fill="#FFFFFF">Independent QA Engineer</text>
+  <text x="386" y="234" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFF6F8">scripts/.venv · Robot Framework</text>
+  <text x="386" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#FFF6F8">Mutation Check + log.html</text>
+
+  <!-- Bidirectional Loop Arrow -->
+  <line x1="278" y1="223" x2="246" y2="223" stroke="#2F2F41" stroke-width="2.5"/>
+  <polygon points="246,218 236,223 246,228" fill="#2F2F41"/>
+
+  <!-- Step 4: PM Reporting -->
+  <rect x="46" y="190" width="190" height="66" rx="8" fill="#FFFFFF" stroke="#E5261F" stroke-width="2"/>
+  <text x="141" y="216" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="12" fill="#2F2F41">Project Manager (PM)</text>
+  <text x="141" y="234" text-anchor="middle" font-family="monospace" font-size="10" fill="#5C5A5A">SQLite Matrix · Parallel/Seq</text>
+  <text x="141" y="248" text-anchor="middle" font-family="monospace" font-size="10" fill="#E5261F">100% HTML deliveries/</text>
+
+  <!-- Bottom Footer Badge -->
+  <rect x="46" y="278" width="448" height="40" rx="6" fill="#2F2F41"/>
+  <text x="270" y="302" text-anchor="middle" font-family="monospace" font-size="11" fill="#CBD5E1">JSON-RPC 2.0 Child Processes · Bubblewrap · RAG Notebooks</text>
+</svg>
+

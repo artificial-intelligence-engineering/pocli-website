@@ -13,12 +13,17 @@
       align-items: center;
     }
   }
-  .footer-title {
-    color: #ffffff;
-    font-size: 1.3rem;
-    font-family: $font-family-heading;
-    font-weight: bold;
+  .footer-github-link {
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 10px;
+    transition: opacity 0.15s ease;
+    &:hover {
+      opacity: 0.75;
+    }
+    img {
+      display: block;
+    }
     @include media-breakpoint-up(sm) {
       margin: 0;
     }

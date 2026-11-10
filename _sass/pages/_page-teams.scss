@@ -17,8 +17,9 @@
       flex: 1;
       h2 {
         margin: 0;
+        font-family: $font-family-base;
         font-size: 22px;
-        font-weight: normal;
+        font-weight: 700;
       }
       p {
         color: $black;
