@@ -1,0 +1,525 @@
+en:
+  eyebrow: "AI Harness Engineering"
+  heading: "AI Agent Harness Reference Matrix & POCLI Coverage"
+  subtitle: >-
+    Consolidated architectural taxonomy of the 9 essential capabilities of an AI Agent Harness,
+    why raw LLM API calls fall short, and the exact implementation status in POCLI.
+  summary_badges:
+    - label: "9 Consolidated Pillars"
+      tone: "neutral"
+    - label: "7 Implemented in POCLI"
+      tone: "implemented"
+    - label: "2 Partial (Roadmap)"
+      tone: "partial"
+  filters:
+    all: "All (9)"
+    mvp: "Core MVP (6)"
+    advanced: "Advanced / Production (3)"
+    partial: "Partial / Roadmap (2)"
+  headers:
+    pillar: "Pillar / Core Capability"
+    definition: "What It Is (Definition)"
+    problem: "Problem Solved"
+    components: "Key Components / Concepts"
+    priority: "Priority Level"
+    pocli: "POCLI Status & Technical Implementation"
+  labels:
+    implemented_badge: "Implemented"
+    partial_badge: "Partial"
+    pending_badge: "Pending"
+    how_label: "How it works in POCLI:"
+    pending_label: "Pending:"
+  rows:
+    - id: "01"
+      pillar: "Operational Loop & Execution Control"
+      definition: >-
+        Orchestrates the master cycle (prompt -> inference -> tool dispatch -> observation),
+        streaming progress to the UI and enforcing strict iteration bounds and timeouts.
+      problem: >-
+        Raw API calls cannot self-correct when code or tests fail, risk infinite retry loops,
+        block user interfaces, or hang indefinitely on stalled requests.
+      components:
+        - "State-driven turn loop"
+        - "JSON-RPC streaming (agent.streamChunk)"
+        - "Bounded cycles (MAX_QA_CORRECTION_CYCLES = 3)"
+        - "Turn timeouts (120s)"
+        - "Stuck-loop detection"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliOrchestrator drives agent turns over JSON-RPC 2.0 stdio workers (PersistentAgentRuntime),
+        streams incremental updates via agent.streamChunk to CommandCenterApp, bounds autonomous DEV<->QA
+        rework with MAX_QA_CORRECTION_CYCLES = 3, and enforces 120s per-turn worker timeouts.
+      pocli_pending: >-
+        Semantic stuck-loop detector (aborting repeated identical failures) and native HTTP SSE
+        token-by-token streaming across every provider adapter.
+
+    - id: "02"
+      pillar: "Model Gateway & Smart Routing"
+      definition: >-
+        Unified multi-provider LLM abstraction that normalizes payloads, tracks sliding-window
+        rate limits, scores candidates, and executes automatic failover.
+      problem: >-
+        Hardcoding a single LLM vendor exposes workflows to HTTP 429/503 outages, latency spikes,
+        provider lock-in, and fragile credential handling.
+      components:
+        - "Multi-provider gateway"
+        - "Bandit routing (auto:smart / fast / reliable)"
+        - "RPM / RPD / TPM / TPD sliding windows"
+        - "Cooldown & cascade failover"
+        - "Reasoning tag sanitizer"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        LLMGateway and LLMRouter (llm-router.ts) unify OpenRouter, Groq, Cerebras, Gemini,
+        Pollinations, Ollama, Anthropic, and OpenAI with routing presets, sliding-window quota
+        tracking, cooldown timers, automatic HTTP 429/503/timeout cascade failover, and
+        cleanModelOutput() sanitization.
+      pocli_pending: >-
+        Per-error exponential backoff with jitter prior to failover and automated shadow/canary
+        routing evaluations.
+
+    - id: "03"
+      pillar: "Typed Tooling & Schema Dispatch"
+      definition: >-
+        Deterministic registry and execution layer exposing workspace, test, and artifact actions
+        per agent role with structured contracts and controlled loading.
+      problem: >-
+        Unconstrained free-text parsing breaks automation, exposes host paths outside the
+        project, and wastes prompt tokens by injecting unused tools upfront.
+      components:
+        - "Native tool_calls & structured blocks"
+        - "Role allowlists (allowedTools)"
+        - "Zod schemas"
+        - "Scoped fs/test execution"
+        - "JIT / deferred tool loading"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        harnesses.ts enforces strict per-role allowedTools (architect, developer, qa, pm), while
+        PoCliOrchestrator.executeAgentToolCalls() dispatches typed artifact, source, test
+        (run_unit_tests), QA provisioning (install_qa_tool, run_qa_suite), and handoff calls.
+        LLMGateway merges native choiceMsg.tool_calls with extractToolCalls() backed by Zod schemas.
+      pocli_pending: >-
+        Passing full JSON Schema tools[] definitions natively in HTTP payloads for all providers
+        and Just-In-Time (JIT) deferred tool loading for large catalogs.
+
+    - id: "04"
+      pillar: "Context Engineering & Layered Memory"
+      definition: >-
+        Deterministic context assembler combining cache-friendly normative prefixes, tiered memory,
+        lossless compaction checkpoints, and local hybrid RAG retrieval.
+      problem: >-
+        Unbounded chat histories cause context rot (lost in the middle), forget architectural
+        decisions, and inflate token spend on every turn.
+      components:
+        - "3-Tier Context Window"
+        - "4-Layer Memory (CONVERSATIONAL / WORKING / PROJECT / AGENT)"
+        - "Lossless compaction (/compact)"
+        - "Hybrid RAG (SHA-256 + FTS5 + vectors)"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliDatabase.assembleAgentContextWindow() builds 3-tier prompts: (T1) cacheable normative
+        artifacts prefix, (T2) 4-layer memory + latest context_compactions checkpoint via /compact
+        (marking compacted_into_id without deleting history), and (T3) active uncompacted turns.
+        NotebookRagEngine indexes workspace notebooks via SHA-256 + SQLite FTS5 + vector similarity.
+      pocli_pending: >-
+        Automatic provider-threshold compaction triggered transparently before context saturation
+        without requiring manual /compact.
+
+    - id: "05"
+      pillar: "Governance, Authority & Sandboxing"
+      definition: >-
+        Hard policy-as-code rules, single-writer state integrity, Human-in-the-Loop gates, and OS
+        namespace isolation constraining what agents can mutate or execute.
+      problem: >-
+        Without deterministic guardrails, agents can overwrite peer artifacts, skip verification
+        gates, corrupt shared state, or run unsafe commands directly on the host.
+      components:
+        - "8-Phase SDLC state machine"
+        - "AuthorityGuard"
+        - "Sole Write Owner + optimistic concurrency"
+        - "HITL (/approve, /accept)"
+        - "Linux bwrap & Podman OCI"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        AuthorityGuard (workflow.ts) validates every SDLC phase transition and artifact permission;
+        PoCliCoordinator serializes SQLite writes as Sole Write Owner with idempotency (requestId),
+        optimistic concurrency (expectedVersion), and coordinator_audit_log; LinuxAgentProcessRunner
+        isolates workers via Bubblewrap (/usr/bin/bwrap --unshare-pid) or Podman OCI containers,
+        while /approve and /accept enforce Product Owner gates.
+      pocli_pending: >-
+        Mandatory default seccomp and fine-grained per-tool network-deny policies even when running
+        in lightweight local mode.
+
+    - id: "06"
+      pillar: "Persistence, Checkpoints & Durability"
+      definition: >-
+        ACID transactional storage of sessions, artifacts, layered memory, and compaction
+        checkpoints enabling crash recovery, inspection, and reproducible state history.
+      problem: >-
+        In-memory agent state vanishes on process crashes or restarts, breaking multi-session
+        engineering work and making post-mortem audits impossible.
+      components:
+        - "SQLite WAL (node:sqlite)"
+        - "Session message history"
+        - "Compaction checkpoints"
+        - "Built-in SQL REPL (pocli db)"
+        - "Step-by-step time-travel replay"
+      priority: "Core (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliDatabase (database.ts) persists projects, messages, versioned artifacts, 4-layer
+        memory entries, compaction checkpoints, and coordinator audit entries inside
+        $HOME/.pocli/pocli.sqlite using Node.js native WAL SQLite. Includes pocli db interactive REPL
+        and JSON/SQL inspection CLI.
+      pocli_pending: >-
+        Deterministic step-by-step session replay (time-travel debugging) and turn branching/rewind
+        from immutable state snapshots.
+
+    - id: "07"
+      pillar: "Multi-Agent Orchestration & Handoffs"
+      definition: >-
+        Coordinated execution of isolated specialist agents across separate OS processes using
+        zero-context-bloat assembly and structured inter-agent handoffs.
+      problem: >-
+        A single generalist agent grades its own code, mixes incompatible personas, and pollutes
+        reasoning context with irrelevant cross-role noise.
+      components:
+        - "Persistent per-role workers"
+        - "JSON-RPC 2.0 bus"
+        - "Typed handoffs ([ARQ->DEV], [DEV->QA], [QA->ARQ])"
+        - "Isolated .venv QA + Mutation Testing"
+      priority: "Advanced / Production"
+      priority_tone: "advanced"
+      status: "implemented"
+      pocli_how: >-
+        PersistentAgentRuntime spawns isolated workers per (projectId, role) across architect,
+        developer, qa, and pm. Each specialist receives only its assembled context window and RAG
+        citations (zero cross-chat bloat). PoCliOrchestrator automates [ARQ->DEV], [DEV->QA],
+        bidirectional DEV<->QA defect loops, and external Robot Framework + TC-MUT-001 validation.
+      pocli_pending: >-
+        Concurrent fan-out / fan-in parallel execution of multiple developer subagents across
+        disjoint modules.
+
+    - id: "08"
+      pillar: "Extensibility: MCP, Plugins & Skills"
+      definition: >-
+        Standardized interfaces to attach external tool servers, packaged extensions, custom role
+        behaviors, and reusable skills without modifying the core runtime.
+      problem: >-
+        Hardcoding custom integrations for every database, tracker, or API turns the harness into
+        a brittle monolith that cannot adapt across teams.
+      components:
+        - "MCP JSON-RPC stdio client (McpRegistry)"
+        - "Per-role MCP ACLs"
+        - "Prompt overrides (~/.pocli/behavior/)"
+        - "Declarative plugins & skills"
+      priority: "Advanced / Production"
+      priority_tone: "advanced"
+      status: "partial"
+      pocli_how: >-
+        McpRegistry (mcp-client.ts) discovers and invokes external Model Context Protocol servers
+        over JSON-RPC 2.0 stdio with strict per-role allowlists (allowedRoles), and harnesses.ts
+        supports user behavior overrides in $HOME/.pocli/behavior/system/<role>.md.
+      pocli_pending: >-
+        Declarative plugin package loader, dynamic skill registry (SKILL.md / lifecycle hooks),
+        and remote HTTP/SSE MCP server transport.
+
+    - id: "09"
+      pillar: "Telemetry, Cost & Harness Evals"
+      definition: >-
+        Quantitative observability of latency, token budgets, structured audit logs, executive
+        reporting, and automated end-to-end evaluations verifying harness behavior.
+      problem: >-
+        Without telemetry and reproducible harness evals, regressions from model swaps or prompt
+        edits go undetected and runtime costs spiral unnoticed.
+      components:
+        - "Rotating logs (pocli logs)"
+        - "Token & compaction tracking"
+        - "PM HTML reports (deliveries/)"
+        - "Headless E2E & Virtual TUI evals (pocli e2e, tui-test)"
+        - "Exact TTFT, USD cost & OTLP"
+      priority: "Advanced / Production"
+      priority_tone: "advanced"
+      status: "partial"
+      pocli_how: >-
+        Logger writes ring-buffered rotating logs ($HOME/.pocli/logs/pocli.log); LLMRouter tracks
+        per-provider latencyMs; PoCliDatabase computes active/saved tokens; PmReporter generates
+        100% HTML reports in deliveries/; and pocli e2e / pocli tui-test plus Vitest + Mutation
+        Testing validate full harness execution.
+      pocli_pending: >-
+        Granular Time-To-First-Token (TTFT) TUI telemetry, per-model USD cost accounting ledger,
+        and OpenTelemetry (OTLP) span export.
+
+es:
+  eyebrow: "Harness Engineering en IA"
+  heading: "Matriz de Referencia: Capacidades Fundamentales de un AI Agent Harness"
+  subtitle: >-
+    Taxonomía arquitectónica consolidada de los 9 pilares indispensables de un AI Agent Harness,
+    qué problemática resuelven frente a una llamada directa a la API del LLM y su estado exacto en POCLI.
+  summary_badges:
+    - label: "9 Pilares Consolidados"
+      tone: "neutral"
+    - label: "7 Implementados en POCLI"
+      tone: "implemented"
+    - label: "2 Parciales (Roadmap)"
+      tone: "partial"
+  filters:
+    all: "Todos (9)"
+    mvp: "Imprescindible MVP (6)"
+    advanced: "Avanzado / Producción (3)"
+    partial: "Parcial / Roadmap (2)"
+  headers:
+    pillar: "Pilar / Capacidad Fundamental"
+    definition: "¿Qué es? (Definición)"
+    problem: "Problemática que resuelve"
+    components: "Componentes clave / Conceptos"
+    priority: "Nivel de prioridad"
+    pocli: "Estado e Implementación en POCLI"
+  labels:
+    implemented_badge: "Implementado"
+    partial_badge: "Parcial"
+    pending_badge: "Pendiente"
+    how_label: "Cómo se implementa en POCLI:"
+    pending_label: "Pendiente:"
+  rows:
+    - id: "01"
+      pillar: "Bucle operativo y control de ejecución"
+      definition: >-
+        Orquesta el ciclo maestro (prompt -> inferencia -> despacho de herramientas -> observación),
+        con streaming hacia la interfaz y límites estrictos de iteración y tiempo.
+      problem: >-
+        Llamar directamente a la API impide autocorregirse ante fallos, provoca bucles infinitos,
+        bloquea la UI y deja peticiones colgadas sin control de salida.
+      components:
+        - "Turn loop dirigido por estado"
+        - "Streaming JSON-RPC (agent.streamChunk)"
+        - "Límite de ciclos (MAX_QA_CORRECTION_CYCLES = 3)"
+        - "Timeouts de worker (120s)"
+        - "Detección de bucles (stuck)"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliOrchestrator gobierna cada turno vía JSON-RPC 2.0 sobre stdio hacia procesos worker
+        (PersistentAgentRuntime), retransmite salida incremental por agent.streamChunk al TUI
+        (CommandCenterApp), limita el bucle DEV<->QA a MAX_QA_CORRECTION_CYCLES = 3 y aplica timeouts
+        de 120s por turno.
+      pocli_pending: >-
+        Detector semántico de estancamiento (stuck loop detector ante fallos repetidos idénticos) y
+        streaming HTTP SSE nativo token a token en todos los adaptadores.
+
+    - id: "02"
+      pillar: "Pasarela y enrutamiento de modelos"
+      definition: >-
+        Capa unificada multi-proveedor que normaliza peticiones LLM, controla cuotas en ventanas
+        deslizantes, puntúa candidatos y ejecuta failover automático.
+      problem: >-
+        Acoplar el agente a una sola API provoca caídas ante errores HTTP 429/503, latencias
+        impredecibles, bloqueo de proveedor y gestión frágil de credenciales.
+      components:
+        - "Model gateway multi-proveedor"
+        - "Bandit routing (auto:smart / fast / reliable)"
+        - "Ventanas RPM / RPD / TPM / TPD"
+        - "Cooldown y fallback en cascada"
+        - "Limpieza de bloques <think>"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        LLMGateway y LLMRouter (llm-router.ts) unifican OpenRouter, Groq, Cerebras, Gemini,
+        Pollinations, Ollama, Anthropic y OpenAI con presets inteligentes, control de cuotas y
+        cooldown, failover en cascada ante HTTP 429/503 o timeouts y saneamiento con
+        cleanModelOutput().
+      pocli_pending: >-
+        Reintentos con exponential backoff + jitter por código de error antes de conmutar de
+        proveedor y evaluación shadow/canary automatizada.
+
+    - id: "03"
+      pillar: "Sistema de herramientas tipadas"
+      definition: >-
+        Registro y ejecutor determinista de capacidades (archivos, artefactos, tests, QA) acotadas
+        por rol mediante contratos validados y carga controlada.
+      problem: >-
+        Permitir salida de texto libre rompe la automatización, expone ficheros fuera del
+        workspace e infla el contexto cargando herramientas innecesarias.
+      components:
+        - "Tool calling nativo y bloques tipados"
+        - "Permisos por rol (allowedTools)"
+        - "Esquemas Zod"
+        - "Ejecución acotada (run_unit_tests, QA)"
+        - "Carga diferida JIT"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        harnesses.ts define el subconjunto allowedTools por rol (architect, developer, qa, pm) y
+        PoCliOrchestrator.executeAgentToolCalls() ejecuta herramientas tipadas de artefactos,
+        código, tests, entorno QA (install_qa_tool, run_qa_suite) y handoffs. LLMGateway combina
+        choiceMsg.tool_calls nativos con extractToolCalls() y contratos Zod.
+      pocli_pending: >-
+        Inyección nativa del array JSON Schema tools[] en el payload HTTP de todos los
+        proveedores y carga diferida Just-In-Time (JIT) para catálogos extensos.
+
+    - id: "04"
+      pillar: "Ingeniería de contexto y memoria"
+      definition: >-
+        Ensamblador determinista que combina prefijos normativos cacheables, memoria en capas,
+        checkpoints de compactación sin pérdida e indexación RAG híbrida local.
+      problem: >-
+        Un historial sin poda sufre context rot (lost in the middle), olvida requisitos y ADR
+        aprobados y dispara el gasto de tokens en cada turno.
+      components:
+        - "Context Window en 3 Niveles"
+        - "Memoria en 4 Capas (CONVERSATIONAL / WORKING / PROJECT / AGENT)"
+        - "Compactación sin pérdida (/compact)"
+        - "RAG Híbrido (SHA-256 + FTS5 + vectores)"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliDatabase.assembleAgentContextWindow() ensambla 3 niveles: (T1) prefijo normativo
+        cacheable, (T2) memoria en 4 capas + último checkpoint de context_compactions vía /compact
+        (marca compacted_into_id preservando el historial) y (T3) turnos activos. NotebookRagEngine
+        indexa conocimiento con hash SHA-256 + SQLite FTS5 + similitud vectorial y citas trazables.
+      pocli_pending: >-
+        Disparo automático de la compactación al superar un umbral porcentual de la ventana del
+        modelo sin necesidad de invocar /compact manualmente.
+
+    - id: "05"
+      pillar: "Gobernanza, seguridad y límites"
+      definition: >-
+        Controles duros policy-as-code, integridad de escritura centralizada, puertas humanas
+        (HITL) y aislamiento del SO para evitar acciones destructivas o fuera de rol.
+      problem: >-
+        Sin barreras deterministas, un modelo puede modificar artefactos ajenos, saltarse fases
+        críticas, corromper la base de datos o ejecutar comandos peligrosos en el host.
+      components:
+        - "Máquina de estados SDLC (8 fases)"
+        - "AuthorityGuard"
+        - "Sole Write Owner + concurrencia optimista"
+        - "HITL (/approve, /accept)"
+        - "Linux Bubblewrap (bwrap) & OCI Podman"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        AuthorityGuard (workflow.ts) valida transiciones de fase y permisos de artefactos por rol;
+        PoCliCoordinator actúa como Sole Write Owner en SQLite con idempotencia (requestId),
+        concurrencia optimista (expectedVersion) y coordinator_audit_log; LinuxAgentProcessRunner
+        aísla workers con /usr/bin/bwrap (--unshare-pid) o Podman OCI, y el PO controla las
+        puertas humanas con /approve y /accept.
+      pocli_pending: >-
+        Perfiles seccomp obligatorios por defecto y denegación granular de red por herramienta
+        individual incluso en modo ligero local.
+
+    - id: "06"
+      pillar: "Persistencia, estado y durabilidad"
+      definition: >-
+        Almacenamiento transaccional ACID de sesiones, artefactos versionados, memoria y
+        checkpoints para recuperar cierres inesperados y auditar todo el ciclo de vida.
+      problem: >-
+        Guardar el estado solo en memoria RAM provoca pérdida total ante caídas del proceso, impide
+        auditar decisiones y bloquea proyectos de varias sesiones.
+      components:
+        - "SQLite WAL nativo (node:sqlite)"
+        - "Historial estructurado de sesión"
+        - "Checkpoints (context_compactions)"
+        - "REPL SQL integrado (pocli db)"
+        - "Reanudación y time-travel replay"
+      priority: "Imprescindible (MVP)"
+      priority_tone: "mvp"
+      status: "implemented"
+      pocli_how: >-
+        PoCliDatabase (database.ts) persiste proyectos, mensajes, artefactos versionados, memoria
+        en 4 capas, checkpoints de compactación y logs de auditoría en $HOME/.pocli/pocli.sqlite
+        mediante SQLite WAL nativo de Node.js. Incluye consola interactiva pocli db y consultas CLI.
+      pocli_pending: >-
+        Reproducción determinista paso a paso (time-travel replay) de cualquier turno pasado y
+        bifurcación/retroceso (branch/rewind) desde snapshots inmutables.
+
+    - id: "07"
+      pillar: "Orquestación multi-agente y delegación"
+      definition: >-
+        Ejecución coordinada de especialistas aislados en procesos independientes con transferencia
+        estructurada de contexto y bucles autónomos de verificación.
+      problem: >-
+        Un único agente generalista acaba evaluando su propio código, mezcla responsabilidades
+        incompatibles y contamina su ventana con ruido de otras tareas.
+      components:
+        - "Workers persistentes por rol y proyecto"
+        - "Bus JSON-RPC 2.0"
+        - "Handoffs tipados ([ARQ->DEV], [DEV->QA], [QA->ARQ])"
+        - "QA aislado (.venv + Mutation Testing)"
+      priority: "Avanzado / Producción"
+      priority_tone: "advanced"
+      status: "implemented"
+      pocli_how: >-
+        PersistentAgentRuntime levanta workers aislados por (projectId, role) entre architect,
+        developer, qa y pm. Cada rol recibe solo su contexto ensamblado y citas RAG sin ruido
+        cruzado. PoCliOrchestrator automatiza los handoffs [ARQ->DEV], [DEV->QA], el ciclo
+        DEV<->QA y la validación externa con Robot Framework y Mutation Testing (TC-MUT-001).
+      pocli_pending: >-
+        Ejecución paralela simultánea (fan-out / fan-in) de múltiples subagentes developer sobre
+        submódulos disjuntos del repositorio.
+
+    - id: "08"
+      pillar: "Extensibilidad y estándares"
+      definition: >-
+        Puntos de extensión estandarizados para acoplar servidores de herramientas externas,
+        plugins empaquetables, overrides de rol y habilidades reutilizables sin tocar el núcleo.
+      problem: >-
+        Programar integraciones ad-hoc para cada servicio externo convierte el arnés en un
+        monolito rígido difícil de extender entre equipos y repositorios.
+      components:
+        - "Cliente MCP stdio (McpRegistry)"
+        - "ACL de servidores MCP por rol"
+        - "Overrides (~/.pocli/behavior/)"
+        - "Plugins y sistema de skills"
+      priority: "Avanzado / Producción"
+      priority_tone: "advanced"
+      status: "partial"
+      pocli_how: >-
+        McpRegistry (mcp-client.ts) descubre e invoca servidores Model Context Protocol (MCP)
+        sobre JSON-RPC 2.0 stdio aplicando listas blancas por rol (allowedRoles), y harnesses.ts
+        permite sobreescribir el comportamiento de cada especialista desde
+        $HOME/.pocli/behavior/system/<role>.md.
+      pocli_pending: >-
+        Cargador declarativo de paquetes/plugins de terceros, registro dinámico de skills
+        (SKILL.md / lifecycle hooks) y transporte MCP remoto por HTTP/SSE.
+
+    - id: "09"
+      pillar: "Telemetría, costes y evaluación"
+      definition: >-
+        Observabilidad cuantitativa de latencia, presupuestos de tokens, logs rotativos, informes
+        ejecutivos y batería de evaluaciones E2E del propio arnés.
+      problem: >-
+        Sin métricas ni evals reproducibles del arnés es imposible detectar regresiones al cambiar
+        de modelo o prompt, ni controlar cuellos de botella y costes reales.
+      components:
+        - "Logs rotativos (pocli logs)"
+        - "Contabilidad de tokens y ahorro"
+        - "Informes HTML del PM (deliveries/)"
+        - "Evals E2E y TUI virtual (pocli e2e, tui-test)"
+        - "TTFT exacto, costes USD y OTLP"
+      priority: "Avanzado / Producción"
+      priority_tone: "advanced"
+      status: "partial"
+      pocli_how: >-
+        Logger mantiene anillo en memoria y rotación en archivo ($HOME/.pocli/logs/pocli.log);
+        LLMRouter mide latencyMs por proveedor; PoCliDatabase contabiliza tokens activos y
+        ahorrados; PmReporter genera informes HTML en deliveries/; y pocli e2e / pocli tui-test
+        junto a Vitest + Mutation Testing verifican el arnés de extremo a extremo.
+      pocli_pending: >-
+        Medición desglosada de TTFT (Time-To-First-Token) en el TUI, libro de costes USD por
+        modelo y exportador estándar OpenTelemetry (OTLP).
+

@@ -1,0 +1,124 @@
+{% assign matrix_lang = page.lang | default: 'en' %}
+{% assign matrix = site.data.harness_matrix[matrix_lang] %}
+{% if matrix %}
+<section id="harness-matrix" class="harness-matrix-section">
+  <div class="container">
+    <div class="harness-matrix-header">
+      <div class="harness-matrix-intro">
+        <span class="harness-matrix-eyebrow">{{ matrix.eyebrow }}</span>
+        <h2 class="harness-matrix-title">{{ matrix.heading }}</h2>
+        <p class="harness-matrix-subtitle">{{ matrix.subtitle }}</p>
+      </div>
+      <div class="harness-matrix-toolbar">
+        <div class="harness-matrix-kpis">
+          {% for badge in matrix.summary_badges %}
+          <span class="harness-kpi-pill harness-kpi-pill--{{ badge.tone }}">{{ badge.label }}</span>
+          {% endfor %}
+        </div>
+        {% if matrix.filters %}
+        <div class="harness-matrix-filters" role="group" aria-label="{{ matrix.heading }}">
+          <button type="button" class="harness-filter-btn is-active" data-filter="all">{{ matrix.filters.all }}</button>
+          <button type="button" class="harness-filter-btn" data-filter="mvp">{{ matrix.filters.mvp }}</button>
+          <button type="button" class="harness-filter-btn" data-filter="advanced">{{ matrix.filters.advanced }}</button>
+          <button type="button" class="harness-filter-btn" data-filter="partial">{{ matrix.filters.partial }}</button>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="harness-matrix-frame">
+      <table class="harness-matrix-table">
+        <thead>
+          <tr>
+            <th class="col-pillar">{{ matrix.headers.pillar }}</th>
+            <th class="col-definition">{{ matrix.headers.definition }}</th>
+            <th class="col-problem">{{ matrix.headers.problem }}</th>
+            <th class="col-components">{{ matrix.headers.components }}</th>
+            <th class="col-priority">{{ matrix.headers.priority }}</th>
+            <th class="col-pocli">{{ matrix.headers.pocli }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in matrix.rows %}
+          <tr data-priority="{{ row.priority_tone }}" data-status="{{ row.status }}">
+            <td class="col-pillar" data-label="{{ matrix.headers.pillar }}">
+              <div class="pillar-cell">
+                <span class="pillar-index">{{ row.id }}</span>
+                <strong class="pillar-name">{{ row.pillar }}</strong>
+              </div>
+            </td>
+            <td class="col-definition" data-label="{{ matrix.headers.definition }}">
+              <p class="cell-prose">{{ row.definition }}</p>
+            </td>
+            <td class="col-problem" data-label="{{ matrix.headers.problem }}">
+              <p class="cell-prose">{{ row.problem }}</p>
+            </td>
+            <td class="col-components" data-label="{{ matrix.headers.components }}">
+              <ul class="component-tags">
+                {% for comp in row.components %}
+                <li><code>{{ comp }}</code></li>
+                {% endfor %}
+              </ul>
+            </td>
+            <td class="col-priority" data-label="{{ matrix.headers.priority }}">
+              <span class="priority-badge priority-badge--{{ row.priority_tone }}">
+                {{ row.priority }}
+              </span>
+            </td>
+            <td class="col-pocli" data-label="{{ matrix.headers.pocli }}">
+              <div class="pocli-status-block">
+                <div class="pocli-status-top">
+                  <span class="status-badge status-badge--{{ row.status }}">
+                    {% if row.status == 'implemented' %}
+                    <span class="status-dot"></span> {{ matrix.labels.implemented_badge }}
+                    {% elsif row.status == 'partial' %}
+                    <span class="status-dot"></span> {{ matrix.labels.partial_badge }}
+                    {% else %}
+                    <span class="status-dot"></span> {{ matrix.labels.pending_badge }}
+                    {% endif %}
+                  </span>
+                </div>
+                <div class="pocli-detail pocli-detail--done">
+                  <span class="detail-label">{{ matrix.labels.how_label }}</span>
+                  <span class="detail-text">{{ row.pocli_how }}</span>
+                </div>
+                <div class="pocli-detail pocli-detail--pending">
+                  <span class="detail-label">{{ matrix.labels.pending_label }}</span>
+                  <span class="detail-text">{{ row.pocli_pending }}</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var section = document.getElementById('harness-matrix');
+  if (!section) return;
+  var buttons = section.querySelectorAll('.harness-filter-btn');
+  var rows = section.querySelectorAll('.harness-matrix-table tbody tr');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+      buttons.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      rows.forEach(function (row) {
+        var p = row.getAttribute('data-priority');
+        var s = row.getAttribute('data-status');
+        var match =
+          filter === 'all' ||
+          (filter === 'mvp' && p === 'mvp') ||
+          (filter === 'advanced' && p === 'advanced') ||
+          (filter === 'partial' && s === 'partial');
+        row.style.display = match ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+{% endif %}

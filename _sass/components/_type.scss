@@ -6,7 +6,9 @@ p {
 }
 h1 {
   font-size: 30px;
-  font-family: $font-family-heading;
+  font-family: $font-family-base;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 20px;
   @include media-breakpoint-up(md) {
