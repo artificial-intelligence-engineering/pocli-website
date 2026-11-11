@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="540" height="360" viewBox="0 0 540 360" xmlns="http://www.w3.org/2000/svg">
   <rect x="20" y="20" width="500" height="320" rx="12" fill="#FFF6F8" stroke="#F88379" stroke-width="2"/>
-  <text x="270" y="54" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="20" fill="#2F2F41">Governed Multi-Agent SDLC</text>
+  <text x="270" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="20" fill="#2F2F41">Governed Multi-Agent SDLC</text>
 
   <!-- Step 1: PO + Architect -->
   <rect x="46" y="78" width="195" height="62" rx="8" fill="#2F2F41"/>
