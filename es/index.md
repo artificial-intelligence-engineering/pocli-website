@@ -4,9 +4,9 @@ lang: es
 layout: home
 permalink: /es/
 description: "El equipo de desarrollo IA open-source en tu terminal — contigo como Product Owner. Entorno nativo Linux TUI/CLI con Arquitecto, Developer, QA y PM."
-intro_image: "images/illustrations/pocli-hero.svg"
+intro_image: "images/demos/pocli-demo.gif"
 intro_image_absolute: false
-intro_image_hide_on_mobile: true
+intro_image_hide_on_mobile: false
 show_call_box: true
 ---
 
