@@ -2,9 +2,9 @@
 title: POCLI — The AI Dev Team in Your Terminal
 layout: home
 description: "The open-source AI dev team in your terminal — with you as the Product Owner. Native Linux TUI/CLI environment with Architect, Developer, QA, and PM agents."
-intro_image: "images/illustrations/pocli-hero.svg"
+intro_image: "images/demos/pocli-demo.gif"
 intro_image_absolute: false
-intro_image_hide_on_mobile: true
+intro_image_hide_on_mobile: false
 show_call_box: true
 ---
 
