@@ -21,9 +21,58 @@ bodyClass: "page-home"
     {% if page.show_call_box %}
     <div class="row justify-content-center mt-4">
       <div class="col-12">
+        <a
+          id="pocli-release-pill"
+          class="release-pill"
+          href="https://github.com/{{ site.data.contact.repo }}/releases/latest"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="release-pill-dot" aria-hidden="true"></span>
+          <span>{{ t.latest_release_label }}:</span>
+          <span id="pocli-latest-version" class="release-pill-version">{{ site.data.contact.latest_version }}</span>
+          <span class="release-pill-sep" aria-hidden="true">·</span>
+          <span>{{ t.release_summary }} →</span>
+        </a>
         {% include call.html show_button=true %}
       </div>
     </div>
+    <script>
+      (function () {
+        var repo = "{{ site.data.contact.repo }}";
+        var cacheKey = "pocli_latest_release_" + repo;
+        var verEl = document.getElementById("pocli-latest-version");
+        var pillEl = document.getElementById("pocli-release-pill");
+        if (!verEl || !pillEl) return;
+        try {
+          var cached = sessionStorage.getItem(cacheKey);
+          if (cached) {
+            var parsed = JSON.parse(cached);
+            if (parsed && parsed.tag && Date.now() - parsed.ts < 3600000) {
+              verEl.textContent = parsed.tag;
+              if (parsed.url) pillEl.href = parsed.url;
+              return;
+            }
+          }
+        } catch (e) {}
+        fetch("https://api.github.com/repos/" + repo + "/releases/latest")
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (data) {
+            if (data && data.tag_name) {
+              verEl.textContent = data.tag_name;
+              if (data.html_url) pillEl.href = data.html_url;
+              try {
+                sessionStorage.setItem(cacheKey, JSON.stringify({
+                  tag: data.tag_name,
+                  url: data.html_url,
+                  ts: Date.now()
+                }));
+              } catch (e) {}
+            }
+          })
+          .catch(function () {});
+      })();
+    </script>
     {% endif %}
   </div>
 </div>
