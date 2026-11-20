@@ -45,3 +45,45 @@
   padding-top: 100px;
   padding-bottom: 30px;
 }
+
+.release-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba($primary, 0.28);
+  background: rgba($primary, 0.06);
+  color: $black;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+
+  &:hover {
+    background: rgba($primary, 0.12);
+    border-color: $primary;
+    color: $black;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .release-pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary;
+    flex-shrink: 0;
+  }
+
+  .release-pill-version {
+    font-weight: 700;
+    color: $primary;
+  }
+
+  .release-pill-sep {
+    color: $steel;
+  }
+}

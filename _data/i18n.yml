@@ -8,6 +8,8 @@ en:
   launch_label: "Launch"
   copy_label: "COPY"
   copied_label: "COPIED"
+  latest_release_label: "Latest release"
+  release_summary: "Local LLMs (llama.cpp) & CLI updates"
 
 es:
   home_url: "/es/"
@@ -19,3 +21,5 @@ es:
   launch_label: "Arrancar"
   copy_label: "COPY"
   copied_label: "COPIADO"
+  latest_release_label: "Última versión"
+  release_summary: "LLMs locales (llama.cpp) y mejoras CLI"
