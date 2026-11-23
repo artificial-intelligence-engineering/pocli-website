@@ -24,3 +24,9 @@ Implemented via the `/compact` command and the `context_compactions` table in `P
 ### Pending / Roadmap
 
 Automatic background compaction when active turn tokens cross a configurable percentage of the active model's context window.
+
+## References
+
+- [Anthropic — Effective Context Engineering for AI Agents (Compaction)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Details structured compaction strategies to preserve architectural decisions across long sessions.
+- [Packer et al. — MemGPT: Towards LLMs as Operating Systems (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560) — Foundational paper on virtual context management and paging/summarization out of active context.
+- [OpenAI — Conversation State & Compaction Guide](https://platform.openai.com/docs/guides/conversation-state) — Practical patterns for managing long-running multi-turn state within context budgets.

@@ -25,3 +25,9 @@ Implementada en toda la arquitectura modular de POCLI: `LLMGateway` / `LLMRouter
 ### Pendiente / Hoja de ruta
 
 Publicar interfaces formales de SDK en TypeScript para cargar adaptadores de terceros dinámicamente fuera del repositorio principal.
+
+## Referencias
+
+- [Michael Feathers — Working Effectively with Legacy Code (Seams)](https://www.oreilly.com/library/view/working-effectively-with/0131177052/) — Origen del concepto de *seam* (costura): un punto donde cambiar comportamiento sin editar el núcleo.
+- [Alistair Cockburn — Hexagonal Architecture (Ports and Adapters)](https://alistair.cockburn.us/hexagonal-architecture/) — Patrón arquitectónico que aísla la orquestación del dominio de proveedores, bases de datos y herramientas.
+- [Martin Fowler — Inversion of Control Containers and the Dependency Injection Pattern](https://martinfowler.com/articles/injection.html) — Guía fundamental para desacoplar adaptadores intercambiables detrás de interfaces limpias.

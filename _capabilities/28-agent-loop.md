@@ -24,3 +24,9 @@ Implemented in `PoCliOrchestrator` (`src/runtime/orchestrator.ts`) and `src/runt
 ### Pending / Roadmap
 
 Semantic stuck-loop detection to abort automatically when an agent repeats identical failing tool calls.
+
+## References
+
+- [Yao et al. — ReAct: Synergizing Reasoning and Acting in Language Models (arXiv:2210.03629)](https://arxiv.org/abs/2210.03629) — Seminal paper formalizing the interleaved thought → action → observation agent loop.
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Defines the canonical augmented-LLM loop with tools and environmental feedback.
+- [Wang et al. — A Survey on LLM-based Autonomous Agents (arXiv:2308.11432)](https://arxiv.org/abs/2308.11432) — Comprehensive academic survey of autonomous agent control loops and architectures.

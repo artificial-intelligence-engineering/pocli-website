@@ -25,3 +25,9 @@ Implementada parcialmente: `pocli e2e` (`src/runtime/headless-runner.ts`) y las 
 ### Pendiente / Hoja de ruta
 
 Arneses de evaluación multimodelo automatizados que midan pass@k, precisión de tool calling, latencia y coste por token sobre un dataset versionado.
+
+## Referencias
+
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Crítica académica rigurosa sobre benchmarks de agentes, métricas sin control de coste y metodología de evaluación.
+- [Anthropic — Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Guía práctica para diseñar evaluaciones automatizadas, evaluadores y suites de regresión para agentes.
+- [Chip Huyen — AI Engineering (O'Reilly, 2025)](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) — Tratamiento de ingeniería completo sobre pipelines de evaluación, rúbricas y compromisos de LLM-as-a-judge.

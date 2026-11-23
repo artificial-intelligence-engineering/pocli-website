@@ -24,3 +24,9 @@ Implemented in `src/core/workflow.ts` (8-phase SDLC state machine + `AuthorityGu
 ### Pending / Roadmap
 
 Configurable workflow graph definitions allowing teams to customize or extend the default 8-phase SDLC.
+
+## References
+
+- [Anthropic — Building Effective Agents (Routing Workflow)](https://www.anthropic.com/engineering/building-effective-agents) — Defines deterministic routing patterns that separate classification from specialized execution.
+- [David Harel — Statecharts: A Visual Formalism for Complex Systems](https://www.sciencedirect.com/science/article/pii/0167642387900359) — Foundational paper on deterministic finite state machines governing complex control flow.
+- [Gary Marcus — Rebooting AI (Neuro-Symbolic Architecture)](https://www.penguinrandomhouse.com/books/603982/rebooting-ai-by-gary-marcus-and-ernest-davis/) — Advocates wrapping probabilistic neural models with explicit symbolic rules and control logic.

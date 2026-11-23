@@ -25,3 +25,9 @@ Todavía no implementada. Aunque `PoCliDatabase` ya conserva el historial comple
 ### Pendiente / Hoja de ruta
 
 Implementar `pocli replay` y retroceso/bifurcación desde snapshots inmutables tanto del estado SQLite como de los archivos del workspace.
+
+## Referencias
+
+- [Martin Fowler — Event Sourcing & Temporal Query](https://martinfowler.com/eaaDev/EventSourcing.html) — Explica cómo reconstruir cualquier estado histórico de forma determinista reproduciendo un log de eventos.
+- [LangGraph — Time Travel & Rewind](https://langchain-ai.github.io/langgraph/concepts/time-travel/) — Patrón práctico para retroceder y bifurcar la ejecución de agentes desde checkpoints pasados.
+- [Temporal — Deterministic Replay](https://docs.temporal.io/encyclopedia/event-history) — Cómo los historiales de eventos permiten reproducción exacta y depuración tras fallos.

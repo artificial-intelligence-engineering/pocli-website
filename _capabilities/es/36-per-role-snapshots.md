@@ -25,3 +25,9 @@ Implementada parcialmente: cada rol mantiene flujos de conversación y capas de 
 ### Pendiente / Hoja de ruta
 
 Snapshots inmutables por rol en instantes concretos con comparación de diferencias e inspección directa en la TUI.
+
+## Referencias
+
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Explica cómo inspeccionar ventanas de contexto por rol para diagnosticar deriva y degradación.
+- [SQLite Command-Line Shell & Inspection](https://www.sqlite.org/cli.html) — Base conceptual tras el REPL `pocli db` de POCLI para consultar snapshots de estado por rol.
+- [LangGraph — State Inspection & Checkpoints](https://langchain-ai.github.io/langgraph/concepts/persistence/) — Demuestra cómo capturar e inspeccionar snapshots inmutables de estado entre pasos de ejecución.

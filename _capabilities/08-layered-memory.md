@@ -24,3 +24,9 @@ Implemented in `PoCliDatabase` (`src/storage/database.ts`) with a **4-layer memo
 ### Pending / Roadmap
 
 Automated memory decay/pruning policies for stale `WORKING` entries.
+
+## References
+
+- [Sumers et al. — Cognitive Architectures for Language Agents (CoALA, arXiv:2309.02427)](https://arxiv.org/abs/2309.02427) — Formal taxonomy separating working, episodic, semantic, and procedural memory in LLM agents.
+- [Packer et al. — MemGPT: Towards LLMs as Operating Systems (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560) — Introduces hierarchical memory tiers bridging limited prompt windows and persistent storage.
+- [Park et al. — Generative Agents: Interactive Simulacra of Human Behavior (arXiv:2304.03442)](https://arxiv.org/abs/2304.03442) — Demonstrates structured memory streams, retrieval scoring, and reflection.

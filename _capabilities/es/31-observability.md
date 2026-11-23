@@ -25,3 +25,9 @@ Implementada parcialmente: `Logger` (`src/core/logger.ts`) escribe logs rotativo
 ### Pendiente / Hoja de ruta
 
 Telemetría granular de Time-To-First-Token (TTFT) en la TUI y exportación de spans OpenTelemetry (OTLP).
+
+## Referencias
+
+- [OpenTelemetry — Semantic Conventions for Generative AI](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Estándar emergente para trazar llamadas LLM, consumo de tokens, latencia y spans de agentes.
+- [Charity Majors et al. — Observability Engineering (O'Reilly)](https://www.oreilly.com/library/view/observability-engineering/9781492076438/) — Texto fundamental sobre eventos estructurados, logs de alta cardinalidad y trazado distribuido.
+- [Anthropic — Demystifying Evals & Tracing for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Explica por qué las trazas completas de turno y la telemetría estructurada son vitales para depurar agentes.

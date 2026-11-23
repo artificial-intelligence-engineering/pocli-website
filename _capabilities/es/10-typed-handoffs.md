@@ -25,3 +25,9 @@ Implementada mediante esquemas Zod en `src/core/contracts.ts` y orquestada por `
 ### Pendiente / Hoja de ruta
 
 Plantillas de handoff personalizables por el usuario para roles especialistas de dominio.
+
+## Referencias
+
+- [OpenAI — A Practical Guide to Building Agents (PDF)](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — Cubre handoffs estructurados y patrones de orquestación centralizada y descentralizada.
+- [Cognition — Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents) — Analiza por qué fallan los handoffs con pérdida y cómo los contratos explícitos mitigan la deriva.
+- [Zod — TypeScript-First Schema Validation](https://zod.dev/) — Biblioteca de validación de esquemas en tiempo de ejecución usada para imponer contratos tipados.

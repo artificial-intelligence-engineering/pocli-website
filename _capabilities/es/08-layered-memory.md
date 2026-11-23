@@ -25,3 +25,9 @@ Implementada en `PoCliDatabase` (`src/storage/database.ts`) con una **arquitectu
 ### Pendiente / Hoja de ruta
 
 Políticas automáticas de expiración/limpieza para entradas obsoletas de memoria `WORKING`.
+
+## Referencias
+
+- [Sumers et al. — Cognitive Architectures for Language Agents (CoALA, arXiv:2309.02427)](https://arxiv.org/abs/2309.02427) — Taxonomía formal que separa la memoria de trabajo, episódica, semántica y procedimental en agentes LLM.
+- [Packer et al. — MemGPT: Towards LLMs as Operating Systems (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560) — Introduce niveles jerárquicos de memoria entre ventanas de prompt limitadas y almacenamiento persistente.
+- [Park et al. — Generative Agents: Interactive Simulacra of Human Behavior (arXiv:2304.03442)](https://arxiv.org/abs/2304.03442) — Demuestra flujos de memoria estructurada, puntuación de recuperación y reflexión.

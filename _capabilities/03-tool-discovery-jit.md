@@ -24,3 +24,9 @@ Partially implemented: `src/runtime/harnesses.ts` restricts exposed tools per ro
 ### Pending / Roadmap
 
 True deferred / Just-In-Time (JIT) schema loading for large tool catalogs so unused MCP or internal tool definitions are fetched only on demand.
+
+## References
+
+- [Anthropic — Writing Effective Tools for AI Agents](https://www.anthropic.com/engineering/writing-tools-for-agents) — Best practices for concise tool catalogs, namespacing, and avoiding tool-bloat.
+- [Model Context Protocol (MCP) — Tools Specification](https://modelcontextprotocol.io/docs/concepts/tools) — Standard protocol for dynamic tool discovery (`tools/list`) and typed invocation.
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Covers Agent-Computer Interface (ACI) design and curated tool surfaces.

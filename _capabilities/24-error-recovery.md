@@ -24,3 +24,9 @@ Implemented in `LLMRouter` (`src/runtime/llm-router.ts`) with sliding-window quo
 ### Pending / Roadmap
 
 Per-error exponential backoff with jitter prior to failover and semantic stuck-loop detection.
+
+## References
+
+- [AWS Architecture Blog — Timeouts, Retries, and Backoff with Jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — Canonical engineering reference on resilient retry strategies and avoiding thundering herds.
+- [IETF RFC 9110 — HTTP Semantics (429 Too Many Requests / 503 Service Unavailable)](https://httpwg.org/specs/rfc9110.html) — Standard specification for rate-limit and transient availability status codes.
+- [Michael Nygard — Release It! (Stability Patterns)](https://pragprog.com/titles/mnee2/release-it-second-edition/) — Covers timeouts, bulkheads, circuit breakers, and graceful failover.

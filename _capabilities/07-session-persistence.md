@@ -24,3 +24,9 @@ Implemented in `PoCliDatabase` (`src/storage/database.ts`) using Node.js native 
 ### Pending / Roadmap
 
 Optional encrypted backup/export bundles for migrating sessions across machines.
+
+## References
+
+- [SQLite Write-Ahead Logging (WAL)](https://www.sqlite.org/wal.html) — How SQLite WAL provides ACID durability and crash recovery for local embedded databases.
+- [Node.js Built-in `node:sqlite` Module Documentation](https://nodejs.org/api/sqlite.html) — Official Node.js API for zero-dependency native SQLite persistence.
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Discusses persisting session progress and artifacts cleanly across multiple context windows.

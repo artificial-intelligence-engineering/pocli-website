@@ -24,3 +24,9 @@ Implemented across `src/cli.ts`, `src/core/auth.ts`, `src/core/lifecycle.ts`, `P
 ### Pending / Roadmap
 
 A dedicated `pocli doctor` diagnostic command printing a full preflight readiness checklist.
+
+## References
+
+- [Anthropic — Effective Harnesses for Long-Running Agents (Initializer Pattern)](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Highlights a dedicated initialization/preflight phase to establish clean environment state.
+- [Martin Fowler — Fail Fast](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) — Classic engineering principle advocating immediate validation before expensive execution.
+- [Kubernetes — Startup, Liveness, and Readiness Probes](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/) — Industry standard mental model for verifying runtime readiness prior to serving work.

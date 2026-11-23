@@ -25,3 +25,9 @@ Todavía no implementada. POCLI se ejecuta actualmente de forma interactiva desd
 ### Pendiente / Hoja de ruta
 
 Un bus de eventos en modo daemon con soporte para `fs.watch`, cron y webhooks conectado a `PoCliOrchestrator`.
+
+## Referencias
+
+- [Martin Fowler — What Do You Mean by 'Event-Driven'?](https://martinfowler.com/articles/201701-event-driven.html) — Clarifica la notificación de eventos, transferencia de estado y arquitecturas reactivas.
+- [CloudEvents Specification (CNCF)](https://cloudevents.io/) — Formato estándar para describir webhooks y eventos de sistema entre runtimes.
+- [Node.js `fs.watch` Documentation](https://nodejs.org/api/fs.html#fswatchfilename-options-listener) — Vigilante nativo de eventos del sistema de archivos (`inotify` en Linux) para disparadores locales.

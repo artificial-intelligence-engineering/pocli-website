@@ -24,3 +24,9 @@ Partially implemented: `McpRegistry` (`src/runtime/mcp-client.ts`) attaches exte
 ### Pending / Roadmap
 
 Declarative plugin package loader, dynamic `SKILL.md` skill registry with lifecycle hooks, and remote HTTP/SSE MCP server transport.
+
+## References
+
+- [Model Context Protocol (MCP) — Architecture Overview](https://modelcontextprotocol.io/docs/concepts/architecture) — Open standard for decoupling external tool and resource servers from agent runtimes.
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Discusses composable workflows and declarative extensions over monolithic frameworks.
+- [AGENTS.md Open Format](https://agents.md/) — Emerging convention for repository-level declarative agent instructions and project rules.

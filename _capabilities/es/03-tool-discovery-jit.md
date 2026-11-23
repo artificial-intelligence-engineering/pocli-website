@@ -25,3 +25,9 @@ Implementada parcialmente: `src/runtime/harnesses.ts` restringe las herramientas
 ### Pendiente / Hoja de ruta
 
 Carga diferida real (JIT) para catálogos grandes de herramientas, de modo que las definiciones no usadas solo se carguen bajo demanda.
+
+## Referencias
+
+- [Anthropic — Writing Effective Tools for AI Agents](https://www.anthropic.com/engineering/writing-tools-for-agents) — Buenas prácticas para catálogos concisos de herramientas, namespaces y prevención del tool-bloat.
+- [Model Context Protocol (MCP) — Tools Specification](https://modelcontextprotocol.io/docs/concepts/tools) — Protocolo estándar para descubrimiento dinámico de herramientas (`tools/list`) e invocación tipada.
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Cubre el diseño de la interfaz agente-computador (ACI) y superficies de herramientas acotadas.

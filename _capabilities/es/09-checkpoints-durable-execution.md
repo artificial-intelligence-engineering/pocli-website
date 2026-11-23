@@ -25,3 +25,9 @@ Implementada parcialmente: `PoCliDatabase` persiste de forma ACID el estado de t
 ### Pendiente / Hoja de ruta
 
 Ejecución durable intra-turno capaz de reanudar un turno interrumpido exactamente en la frontera de la última llamada a herramienta.
+
+## Referencias
+
+- [Temporal — What Is Durable Execution?](https://docs.temporal.io/evaluate/understanding-temporal#durable-execution) — Referencia de la industria sobre ejecución durable, estado con checkpoints y reanudación tolerante a fallos.
+- [LangGraph — Persistence & Checkpointing Concepts](https://langchain-ai.github.io/langgraph/concepts/persistence/) — Explica los checkpoints a nivel de grafo para pausar, reanudar y recuperar flujos de agentes.
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Patrones de ingeniería para guardar checkpoints seguros en tareas de programación multisesión.

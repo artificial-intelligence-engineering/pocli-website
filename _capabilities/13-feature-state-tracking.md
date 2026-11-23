@@ -24,3 +24,9 @@ Implemented via the 8-phase SDLC state machine (`src/core/workflow.ts`), version
 ### Pending / Roadmap
 
 Granular per-requirement checklist tracking (`REQ-001` → test pass/fail matrix) linked directly to individual git commits.
+
+## References
+
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Proposes structured feature lists (`feature_list.json`) as a first-class state primitive.
+- [Martin Fowler — Feature Toggles & Incremental Delivery](https://martinfowler.com/articles/feature-toggles.html) — Engineering discipline for tracking discrete feature states through delivery.
+- [SWE-bench — Evaluating Real-World Software Engineering](https://www.swebench.com/) — Benchmark emphasizing verifiable feature/issue resolution backed by executable tests.

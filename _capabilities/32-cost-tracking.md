@@ -24,3 +24,9 @@ Partially implemented: `PoCliDatabase` computes active and compaction-saved toke
 ### Pending / Roadmap
 
 An exact per-model USD cost accounting ledger with configurable per-project budget caps and alerts.
+
+## References
+
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Emphasizes joint cost-accuracy Pareto frontiers rather than cost-blind accuracy metrics.
+- [FinOps Foundation — Cloud & AI Cost Management Framework](https://www.finops.org/framework/) — Industry practices for unit-cost accounting, budgets, and usage attribution.
+- [OpenAI Tokenizer & Usage Accounting](https://platform.openai.com/docs/guides/production-best-practices) — Practical guidance on monitoring token budgets and optimizing prompt costs.

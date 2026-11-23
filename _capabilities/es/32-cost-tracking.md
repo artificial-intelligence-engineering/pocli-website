@@ -25,3 +25,9 @@ Implementada parcialmente: `PoCliDatabase` calcula tokens activos y ahorrados tr
 ### Pendiente / Hoja de ruta
 
 Un libro mayor exacto de costes en USD por modelo con límites configurables de presupuesto y alertas por proyecto.
+
+## Referencias
+
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Subraya la importancia de fronteras de Pareto coste-precisión frente a métricas ciegas al coste.
+- [FinOps Foundation — Cloud & AI Cost Management Framework](https://www.finops.org/framework/) — Prácticas de la industria para contabilidad de costes unitarios, presupuestos y atribución de uso.
+- [OpenAI Tokenizer & Usage Accounting](https://platform.openai.com/docs/guides/production-best-practices) — Guía práctica para monitorizar presupuestos de tokens y optimizar costes de prompts.

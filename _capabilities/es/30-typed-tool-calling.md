@@ -25,3 +25,9 @@ Implementada en `LLMGateway` (`choiceMsg.tool_calls` combinado con `extractToolC
 ### Pendiente / Hoja de ruta
 
 Envío nativo de definiciones completas JSON Schema `tools[]` en los payloads HTTP de todos los adaptadores.
+
+## Referencias
+
+- [OpenAI — Function Calling & Structured Outputs Guide](https://platform.openai.com/docs/guides/function-calling) — Referencia de la industria para declaraciones de herramientas con JSON Schema y argumentos tipados.
+- [Anthropic — Tool Use with Claude](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview) — Buenas prácticas para contratos deterministas de herramientas, manejo de errores y diseño de esquemas.
+- [JSON Schema Specification](https://json-schema.org/) — Vocabulario estándar para describir y validar payloads JSON estructurados.

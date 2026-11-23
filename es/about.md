@@ -111,67 +111,67 @@ Para Marcus, este *harness* de reglas, gramáticas y herramientas formales es pr
 
 ## 4. Los 5 Subsistemas Fundamentales y el Mapeo de Capacidades
 
-Un harness gobernado puede estructurarse en **cinco subsistemas fundamentales**. Al mapear las **40 capacidades** (de la [Matriz de Capacidades y Cobertura](/es/services/#harness-matrix) de POCLI) sobre estos cinco pilares, se distingue claramente qué pertenece al entorno gobernado y qué forma parte del runtime operativo puro:
+Un harness gobernado puede estructurarse en **cinco subsistemas fundamentales**. Al mapear las **40 capacidades** (de la [Matriz de Capacidades y Cobertura]({{ '/es/services/' | relative_url }}) de POCLI) sobre estos cinco pilares, se distingue claramente qué pertenece al entorno gobernado y qué forma parte del runtime operativo puro:
 
 ### 4.1 Instructions
 *Reglas, convenciones, arquitectura y pasos que el agente debe seguir (más allá de `AGENTS.md`: todo lo que indica al modelo qué es verdad y qué debe hacer).*
 
-- **[Capacidad #1](/es/capabilities/01-context-management/) — Gestión de contexto:** qué entra en el prompt y cómo se monta.
-- **[Capacidad #2](/es/capabilities/02-structured-compaction/) — Compactación estructurada:** reglas para preservar lo esencial entre turnos.
-- **[Capacidad #3](/es/capabilities/03-tool-discovery-jit/) — Tool discovery y carga JIT:** catálogo de capacidades bajo demanda.
-- **[Capacidad #4](/es/capabilities/04-plugins-skills/) — Plugins y skills:** extensión declarativa de instrucciones.
-- **[Capacidad #5](/es/capabilities/05-context-provenance/) — Context provenance:** procedencia documentada de cada elemento inyectado.
-- **[Capacidad #6](/es/capabilities/06-append-only-event-log/) — Append-only event log:** registro inmutable de qué instrucciones recibió.
+- **[Capacidad #1]({{ '/es/capabilities/01-context-management/' | relative_url }}) — Gestión de contexto:** qué entra en el prompt y cómo se monta.
+- **[Capacidad #2]({{ '/es/capabilities/02-structured-compaction/' | relative_url }}) — Compactación estructurada:** reglas para preservar lo esencial entre turnos.
+- **[Capacidad #3]({{ '/es/capabilities/03-tool-discovery-jit/' | relative_url }}) — Tool discovery y carga JIT:** catálogo de capacidades bajo demanda.
+- **[Capacidad #4]({{ '/es/capabilities/04-plugins-skills/' | relative_url }}) — Plugins y skills:** extensión declarativa de instrucciones.
+- **[Capacidad #5]({{ '/es/capabilities/05-context-provenance/' | relative_url }}) — Context provenance:** procedencia documentada de cada elemento inyectado.
+- **[Capacidad #6]({{ '/es/capabilities/06-append-only-event-log/' | relative_url }}) — Append-only event log:** registro inmutable de qué instrucciones recibió.
 
 ### 4.2 State
 *Progreso, decisiones, archivos modificados y handoffs entre sesiones.*
 
-- **[Capacidad #7](/es/capabilities/07-session-persistence/) — Persistencia de sesiones:** almacenamiento durable de conversaciones.
-- **[Capacidad #8](/es/capabilities/08-layered-memory/) — Memoria por capas:** memoria de trabajo, corto/largo plazo y episódica.
-- **[Capacidad #9](/es/capabilities/09-checkpoints-durable-execution/) — Checkpoints y durable execution:** puntos de reanudación seguros.
-- **[Capacidad #10](/es/capabilities/10-typed-handoffs/) — Handoffs tipados:** contrato de continuidad entre sesiones.
-- **[Capacidad #11](/es/capabilities/11-replay-recovery/) — Replay y recuperación:** reconstrucción determinista de estado.
-- **[Capacidad #12](/es/capabilities/12-episodic-observational-memory/) — Memoria episódica / observacional:** trazabilidad histórica de comportamiento.
-- **[Capacidad #13](/es/capabilities/13-feature-state-tracking/) — Feature state tracking:** estado de funcionalidades y artefactos como primitiva.
-- **[Capacidad #14](/es/capabilities/14-state-merge-semantics/) — State merge semantics:** reglas deterministas de combinación de escrituras.
+- **[Capacidad #7]({{ '/es/capabilities/07-session-persistence/' | relative_url }}) — Persistencia de sesiones:** almacenamiento durable de conversaciones.
+- **[Capacidad #8]({{ '/es/capabilities/08-layered-memory/' | relative_url }}) — Memoria por capas:** memoria de trabajo, corto/largo plazo y episódica.
+- **[Capacidad #9]({{ '/es/capabilities/09-checkpoints-durable-execution/' | relative_url }}) — Checkpoints y durable execution:** puntos de reanudación seguros.
+- **[Capacidad #10]({{ '/es/capabilities/10-typed-handoffs/' | relative_url }}) — Handoffs tipados:** contrato de continuidad entre sesiones.
+- **[Capacidad #11]({{ '/es/capabilities/11-replay-recovery/' | relative_url }}) — Replay y recuperación:** reconstrucción determinista de estado.
+- **[Capacidad #12]({{ '/es/capabilities/12-episodic-observational-memory/' | relative_url }}) — Memoria episódica / observacional:** trazabilidad histórica de comportamiento.
+- **[Capacidad #13]({{ '/es/capabilities/13-feature-state-tracking/' | relative_url }}) — Feature state tracking:** estado de funcionalidades y artefactos como primitiva.
+- **[Capacidad #14]({{ '/es/capabilities/14-state-merge-semantics/' | relative_url }}) — State merge semantics:** reglas deterministas de combinación de escrituras.
 
 ### 4.3 Verification
 *Tests, lint, type-check, smoke tests y validación empírica.*
 
-- **[Capacidad #15](/es/capabilities/15-runtime-self-tests/) — Tests del runtime:** el harness se testea a sí mismo.
-- **[Capacidad #16](/es/capabilities/16-agent-evals/) — Evals del agente:** medición de la calidad del modelo.
-- **[Capacidad #17](/es/capabilities/17-failure-routing-rollback/) — Failure routing / rollback:** qué ocurre cuando la verificación falla.
-- **[Capacidad #18](/es/capabilities/18-harness-level-evaluation/) — Harness-level evaluation:** medición del sistema completo.
+- **[Capacidad #15]({{ '/es/capabilities/15-runtime-self-tests/' | relative_url }}) — Tests del runtime:** el harness se testea a sí mismo.
+- **[Capacidad #16]({{ '/es/capabilities/16-agent-evals/' | relative_url }}) — Evals del agente:** medición de la calidad del modelo.
+- **[Capacidad #17]({{ '/es/capabilities/17-failure-routing-rollback/' | relative_url }}) — Failure routing / rollback:** qué ocurre cuando la verificación falla.
+- **[Capacidad #18]({{ '/es/capabilities/18-harness-level-evaluation/' | relative_url }}) — Harness-level evaluation:** medición del sistema completo.
 
 ### 4.4 Scope
 *Límites de lo que el agente puede tocar y del tamaño de la tarea.*
 
-- **[Capacidad #19](/es/capabilities/19-safe-execution-sandboxing/) — Ejecución segura / sandbox:** límites de sistema operativo sobre qué puede ejecutarse.
-- **[Capacidad #20](/es/capabilities/20-approvals-permissions/) — Aprobaciones y permisos:** gates que requieren firma explícita del PO.
-- **[Capacidad #21](/es/capabilities/21-routing/) — Routing:** qué camino toma el flujo y cuál queda bloqueado.
-- **[Capacidad #22](/es/capabilities/22-worktrees/) — Worktrees:** aislamiento físico del espacio de trabajo.
-- **[Capacidad #23](/es/capabilities/23-scope-control/) — Scope control:** acotación estricta del tamaño de tarea y archivos editables.
+- **[Capacidad #19]({{ '/es/capabilities/19-safe-execution-sandboxing/' | relative_url }}) — Ejecución segura / sandbox:** límites de sistema operativo sobre qué puede ejecutarse.
+- **[Capacidad #20]({{ '/es/capabilities/20-approvals-permissions/' | relative_url }}) — Aprobaciones y permisos:** gates que requieren firma explícita del PO.
+- **[Capacidad #21]({{ '/es/capabilities/21-routing/' | relative_url }}) — Routing:** qué camino toma el flujo y cuál queda bloqueado.
+- **[Capacidad #22]({{ '/es/capabilities/22-worktrees/' | relative_url }}) — Worktrees:** aislamiento físico del espacio de trabajo.
+- **[Capacidad #23]({{ '/es/capabilities/23-scope-control/' | relative_url }}) — Scope control:** acotación estricta del tamaño de tarea y archivos editables.
 
 ### 4.5 Session Lifecycle
 *Inicialización, ejecución, limpieza, persistencia y reanudación.*
 
-- **[Capacidad #24](/es/capabilities/24-error-recovery/) — Recuperación de errores:** manejo resiliente de fallos transitorios.
-- **[Capacidad #25](/es/capabilities/25-streaming-cancellation/) — Streaming y cancelación:** ciclo de vida de la salida en curso.
-- **[Capacidad #26](/es/capabilities/26-session-lifecycle/) — Session lifecycle:** arranque, pausa, reanudación y cierre.
-- **[Capacidad #27](/es/capabilities/27-bootstrap-preflight/) — Bootstrap / preflight:** la fase `initialize`.
+- **[Capacidad #24]({{ '/es/capabilities/24-error-recovery/' | relative_url }}) — Recuperación de errores:** manejo resiliente de fallos transitorios.
+- **[Capacidad #25]({{ '/es/capabilities/25-streaming-cancellation/' | relative_url }}) — Streaming y cancelación:** ciclo de vida de la salida en curso.
+- **[Capacidad #26]({{ '/es/capabilities/26-session-lifecycle/' | relative_url }}) — Session lifecycle:** arranque, pausa, reanudación y cierre.
+- **[Capacidad #27]({{ '/es/capabilities/27-bootstrap-preflight/' | relative_url }}) — Bootstrap / preflight:** la fase `initialize`.
 
 ### 4.6 Capa de Runtime Operativo Puro (Fuera de los 5 Pilares)
 *La **"capa de servicio"** subyacente que el modelo de gobernanza de 5 pilares da por supuesta:*
 
-- **[Capacidad #28](/es/capabilities/28-agent-loop/) — Agent loop:** el mecanismo mismo de ejecución.
-- **[Capacidad #29](/es/capabilities/29-model-gateway/) — Model gateway:** abstracción de proveedores LLM.
-- **[Capacidad #30](/es/capabilities/30-typed-tool-calling/) — Tool calling tipado:** la interfaz agente ↔ mundo.
-- **[Capacidad #31](/es/capabilities/31-observability/) — Observabilidad:** telemetría y logs transversales.
-- **[Capacidad #32](/es/capabilities/32-cost-tracking/) — Cost tracking:** contabilidad de tokens y gasto.
-- **[Capacidad #33](/es/capabilities/33-multi-agent-orchestration/) — Multi-agent orchestration:** coordinación de múltiples agentes especializados.
-- **[Capacidad #34](/es/capabilities/34-event-driven-agents/) — Event-driven agents:** ejecución reactiva por eventos.
-- **[Capacidad #35](/es/capabilities/35-sub-agent-delegation/) — Sub-agent delegation:** delegación de subtareas acotadas.
-- **[Capacidad #36](/es/capabilities/36-per-role-snapshots/) — Snapshots por rol:** inspección del estado por rol.
-- **[Capacidad #37](/es/capabilities/37-adaptive-model-routing/) — Adaptive model routing:** selección dinámica de modelo por tarea.
-- **[Capacidad #38](/es/capabilities/38-productivity-metrics/) — Métricas de productividad:** medición del rendimiento de entrega.
-- **[Capacidad #39](/es/capabilities/39-capability-seams/) — Capability seams:** arquitectura de providers, no un pilar funcional.
+- **[Capacidad #28]({{ '/es/capabilities/28-agent-loop/' | relative_url }}) — Agent loop:** el mecanismo mismo de ejecución.
+- **[Capacidad #29]({{ '/es/capabilities/29-model-gateway/' | relative_url }}) — Model gateway:** abstracción de proveedores LLM.
+- **[Capacidad #30]({{ '/es/capabilities/30-typed-tool-calling/' | relative_url }}) — Tool calling tipado:** la interfaz agente ↔ mundo.
+- **[Capacidad #31]({{ '/es/capabilities/31-observability/' | relative_url }}) — Observabilidad:** telemetría y logs transversales.
+- **[Capacidad #32]({{ '/es/capabilities/32-cost-tracking/' | relative_url }}) — Cost tracking:** contabilidad de tokens y gasto.
+- **[Capacidad #33]({{ '/es/capabilities/33-multi-agent-orchestration/' | relative_url }}) — Multi-agent orchestration:** coordinación de múltiples agentes especializados.
+- **[Capacidad #34]({{ '/es/capabilities/34-event-driven-agents/' | relative_url }}) — Event-driven agents:** ejecución reactiva por eventos.
+- **[Capacidad #35]({{ '/es/capabilities/35-sub-agent-delegation/' | relative_url }}) — Sub-agent delegation:** delegación de subtareas acotadas.
+- **[Capacidad #36]({{ '/es/capabilities/36-per-role-snapshots/' | relative_url }}) — Snapshots por rol:** inspección del estado por rol.
+- **[Capacidad #37]({{ '/es/capabilities/37-adaptive-model-routing/' | relative_url }}) — Adaptive model routing:** selección dinámica de modelo por tarea.
+- **[Capacidad #38]({{ '/es/capabilities/38-productivity-metrics/' | relative_url }}) — Métricas de productividad:** medición del rendimiento de entrega.
+- **[Capacidad #39]({{ '/es/capabilities/39-capability-seams/' | relative_url }}) — Capability seams:** arquitectura de providers, no un pilar funcional.

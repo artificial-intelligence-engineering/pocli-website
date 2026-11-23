@@ -25,3 +25,9 @@ Implementada mediante `allowedTools` por rol en `src/runtime/harnesses.ts`, ruta
 ### Pendiente / Hoja de ruta
 
 Listas blancas declarativas de patrones glob editables por tarea y cortacircuitos de tamaño máximo de diff.
+
+## Referencias
+
+- [OWASP GenAI — Excessive Agency & Least Privilege](https://genai.owasp.org/llmrisk/llm06-excessive-agency/) — Explica por qué acotar estrictamente herramientas, rutas y acciones es esencial para la seguridad.
+- [Saltzer & Schroeder — The Protection of Information in Computer Systems (Least Privilege)](https://web.mit.edu/Saltzer/www/publications/protection/) — Paper clásico de seguridad que establece el Principio de Mínimo Privilegio.
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Muestra cómo acotar estrictamente tareas y herramientas mejora tanto la precisión como la seguridad.

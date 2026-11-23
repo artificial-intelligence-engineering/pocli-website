@@ -24,3 +24,9 @@ Partially implemented: `Logger` (`src/core/logger.ts`) writes ring-buffered rota
 ### Pending / Roadmap
 
 Granular Time-To-First-Token (TTFT) TUI telemetry and OpenTelemetry (OTLP) span export.
+
+## References
+
+- [OpenTelemetry — Semantic Conventions for Generative AI](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — Emerging standard for tracing LLM calls, token usage, latency, and agent spans.
+- [Charity Majors et al. — Observability Engineering (O'Reilly)](https://www.oreilly.com/library/view/observability-engineering/9781492076438/) — Foundational text on structured events, high-cardinality logs, and distributed tracing.
+- [Anthropic — Demystifying Evals & Tracing for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — Explains why full turn transcripts and structured telemetry are vital for agent debugging.

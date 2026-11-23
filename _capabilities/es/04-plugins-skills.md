@@ -25,3 +25,9 @@ Implementada parcialmente: `McpRegistry` (`src/runtime/mcp-client.ts`) conecta s
 ### Pendiente / Hoja de ruta
 
 Cargador declarativo de paquetes de plugins, registro dinámico de skills (`SKILL.md` con hooks de ciclo de vida) y transporte MCP remoto HTTP/SSE.
+
+## Referencias
+
+- [Model Context Protocol (MCP) — Architecture Overview](https://modelcontextprotocol.io/docs/concepts/architecture) — Estándar abierto para desacoplar servidores externos de herramientas y recursos del runtime del agente.
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Analiza flujos componibles y extensiones declarativas frente a frameworks monolíticos.
+- [AGENTS.md Open Format](https://agents.md/) — Convención emergente para instrucciones declarativas de agentes y reglas a nivel de repositorio.

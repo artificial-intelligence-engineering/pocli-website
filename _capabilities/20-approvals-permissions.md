@@ -24,3 +24,9 @@ Implemented via `AuthorityGuard` (`src/core/workflow.ts`), which deterministical
 ### Pending / Roadmap
 
 Per-command interactive risk-tiered approval prompts for ad-hoc destructive shell operations.
+
+## References
+
+- [OWASP Top 10 for Large Language Model Applications (LLM06: Excessive Agency)](https://genai.owasp.org/llmrisk/llm06-excessive-agency/) — Security taxonomy highlighting least-privilege permissions and human approval gates.
+- [OpenAI — A Practical Guide to Building Agents (Guardrails & Human Intervention)](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — Defines tiered risk guardrails and mandatory human-in-the-loop checkpoints.
+- [NIST AI Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) — Governance framework for human oversight, accountability, and controlled AI autonomy.

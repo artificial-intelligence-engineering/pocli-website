@@ -24,3 +24,9 @@ Implemented through per-role `allowedTools` in `src/runtime/harnesses.ts`, works
 ### Pending / Roadmap
 
 Declarative per-task file-glob write allowlists and diff-size circuit breakers.
+
+## References
+
+- [OWASP GenAI — Excessive Agency & Least Privilege](https://genai.owasp.org/llmrisk/llm06-excessive-agency/) — Explains why strict tool, path, and action scoping is essential for safe agentic systems.
+- [Saltzer & Schroeder — The Protection of Information in Computer Systems (Least Privilege)](https://web.mit.edu/Saltzer/www/publications/protection/) — Classic security paper establishing the Principle of Least Privilege.
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Shows how tight task and tool scoping improves both accuracy and safety.

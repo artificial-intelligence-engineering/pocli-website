@@ -25,3 +25,9 @@ Implementada entre `src/cli.ts`, `src/core/auth.ts`, `src/core/lifecycle.ts`, la
 ### Pendiente / Hoja de ruta
 
 Un comando dedicado `pocli doctor` que imprima un informe completo de diagnóstico preflight.
+
+## Referencias
+
+- [Anthropic — Effective Harnesses for Long-Running Agents (Initializer Pattern)](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Destaca una fase dedicada de inicialización/preflight para asegurar un entorno limpio.
+- [Martin Fowler — Fail Fast](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) — Principio clásico de ingeniería que defiende validar de inmediato antes de ejecutar trabajo costoso.
+- [Kubernetes — Startup, Liveness, and Readiness Probes](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/) — Modelo estándar de la industria para verificar la disponibilidad del runtime antes de aceptar carga.

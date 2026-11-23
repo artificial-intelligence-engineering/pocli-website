@@ -25,3 +25,9 @@ Implementada en `LLMRouter` (`src/runtime/llm-router.ts`) con perfiles de enruta
 ### Pendiente / Hoja de ruta
 
 Evaluaciones automáticas shadow/canary para ajustar empíricamente la puntuación de candidatos.
+
+## Referencias
+
+- [Ong et al. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv:2406.18665)](https://arxiv.org/abs/2406.18665) — Investigación que demuestra el enrutamiento dinámico entre modelos potentes y rápidos para reducir costes.
+- [Chen et al. — FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance (arXiv:2305.05176)](https://arxiv.org/abs/2305.05176) — Introduce cascadas de LLMs y estrategias adaptativas de selección de modelos.
+- [Slivkins — Introduction to Multi-Armed Bandits (arXiv:1904.07272)](https://arxiv.org/abs/1904.07272) — Fundamento teórico del enrutamiento adaptativo basado en bandits bajo incertidumbre de latencia y fiabilidad.
