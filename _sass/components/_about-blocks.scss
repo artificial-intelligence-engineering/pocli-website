@@ -234,3 +234,148 @@
     }
   }
 }
+
+// 3-Tier Context Window Architecture Diagram (Capability #1)
+.ctx-diagram {
+  margin: 24px 0 32px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2d8dc;
+  border-radius: 8px;
+
+  .ctx-diagram-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $black;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $primary;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    code {
+      font-size: 0.76rem;
+    }
+  }
+
+  .ctx-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ctx-tier {
+    display: grid;
+    grid-template-columns: 185px 1fr;
+    border: 1px solid #e5d6da;
+    border-radius: 6px;
+    overflow: hidden;
+    background: $white;
+    box-shadow: 0 2px 8px rgba(47, 47, 65, 0.04);
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+
+    &--t1 .ctx-tier-label {
+      background: $black;
+      color: $white;
+      border-right: 3px solid $primary;
+    }
+
+    &--t2 .ctx-tier-label {
+      background: #3f3f56;
+      color: $white;
+      border-right: 3px solid $secondary;
+    }
+
+    &--t3 .ctx-tier-label {
+      background: #eef2f7;
+      color: $black;
+      border-right: 3px solid #64748b;
+    }
+
+    &--rag .ctx-tier-label {
+      background: $white-offset;
+      color: $primary-dark;
+      border-right: 3px solid $primary;
+    }
+  }
+
+  .ctx-tier-label {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+
+    .ctx-tier-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+    }
+
+    .ctx-tier-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+  }
+
+  .ctx-tier-body {
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: $steel;
+
+    p {
+      margin: 0 0 6px;
+      font-size: 0.88rem;
+      line-height: 1.48;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .ctx-tier-source {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  }
+
+  .ctx-arrow {
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: $primary;
+    margin: 10px 0 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .ctx-output {
+    background: $black;
+    color: $white;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    border-left: 4px solid $primary;
+
+    strong {
+      color: $white;
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffd6d9;
+    }
+  }
+}
