@@ -24,3 +24,9 @@ Implemented in `LLMGateway` (`src/runtime/llm-gateway.ts`) and `src/local/adapte
 ### Pending / Roadmap
 
 Unified native structured-output (`response_format`) enforcement across all supported adapters.
+
+## References
+
+- [Chip Huyen — AI Engineering (Model Integration & Gateways)](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) — Covers unified LLM gateways, normalization, fallback, and vendor abstraction in production.
+- [OpenRouter API Documentation](https://openrouter.ai/docs) — Reference for unified multi-provider OpenAI-compatible routing and normalization.
+- [llama.cpp — Local LLM Inference Engine](https://github.com/ggml-org/llama.cpp) — Open-source local GGUF inference backend integrated into POCLI's local adapter.

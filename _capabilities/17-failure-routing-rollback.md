@@ -24,3 +24,9 @@ Partially implemented: `PoCliOrchestrator` (`src/runtime/orchestrator.ts`) route
 ### Pending / Roadmap
 
 Automatic workspace snapshot/git rollback when a verification gate fails catastrophically or exhausts its retry budget.
+
+## References
+
+- [Anthropic — Building Effective Agents (Evaluator-Optimizer Loop)](https://www.anthropic.com/engineering/building-effective-agents) — Describes bounded feedback loops routing verification failures back to the generator.
+- [Michael Nygard — Release It! (Circuit Breakers & Stability Patterns)](https://pragprog.com/titles/mnee2/release-it-second-edition/) — Classic stability patterns for bounding retries, isolating failures, and failing safely.
+- [Git — Reset, Revert & Checkout Recovery](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) — Reference on deterministic workspace rollback primitives in Git.

@@ -25,3 +25,9 @@ Implementada mediante `AuthorityGuard` (`src/core/workflow.ts`), que valida dete
 ### Pendiente / Hoja de ruta
 
 Confirmaciones interactivas por nivel de riesgo para operaciones destructivas puntuales en shell.
+
+## Referencias
+
+- [OWASP Top 10 for Large Language Model Applications (LLM06: Excessive Agency)](https://genai.owasp.org/llmrisk/llm06-excessive-agency/) — Taxonomía de seguridad que destaca el principio de mínimo privilegio y los gates de aprobación humana.
+- [OpenAI — A Practical Guide to Building Agents (Guardrails & Human Intervention)](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — Define guardrails por niveles de riesgo y puntos de control obligatorios Human-in-the-Loop.
+- [NIST AI Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) — Marco de gobernanza para supervisión humana, rendición de cuentas y autonomía controlada.

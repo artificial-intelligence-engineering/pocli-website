@@ -25,3 +25,9 @@ Implementada parcialmente: `PoCliOrchestrator` (`src/runtime/orchestrator.ts`) r
 ### Pendiente / Hoja de ruta
 
 Rollback automático de snapshots/git del workspace cuando un gate de verificación falla de forma crítica o agota su presupuesto de reintentos.
+
+## Referencias
+
+- [Anthropic — Building Effective Agents (Evaluator-Optimizer Loop)](https://www.anthropic.com/engineering/building-effective-agents) — Describe bucles acotados de retroalimentación que devuelven fallos de verificación al generador.
+- [Michael Nygard — Release It! (Circuit Breakers & Stability Patterns)](https://pragprog.com/titles/mnee2/release-it-second-edition/) — Patrones clásicos de estabilidad para acotar reintentos, aislar fallos y degradar de forma segura.
+- [Git — Reset, Revert & Checkout Recovery](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) — Referencia sobre primitivas deterministas de rollback del espacio de trabajo en Git.

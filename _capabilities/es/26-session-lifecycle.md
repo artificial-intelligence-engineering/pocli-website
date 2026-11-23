@@ -25,3 +25,9 @@ Implementada en `src/core/lifecycle.ts` y `PersistentAgentRuntime` (`src/runtime
 ### Pendiente / Hoja de ruta
 
 Temporizadores de hibernación de workers inactivos para liberar memoria automáticamente en pausas largas.
+
+## Referencias
+
+- [Node.js Documentation — Child Processes & Signal Events](https://nodejs.org/api/child_process.html) — Referencia para lanzar, supervisar y terminar limpiamente procesos worker aislados.
+- [12-Factor App — Disposability (Fast Startup & Graceful Shutdown)](https://12factor.net/disposability) — Principios operativos para arranque rápido, pausa y apagado limpio mediante SIGTERM.
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Cubre cómo inicializar, pausar y reanudar flujos multisesión de agentes con fiabilidad.

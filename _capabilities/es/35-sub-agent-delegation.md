@@ -25,3 +25,9 @@ Implementada parcialmente: `PoCliOrchestrator` delega fases del SDLC entre worke
 ### Pendiente / Hoja de ruta
 
 Lanzamiento dinámico de sub-agentes efímeros en paralelo (fan-out / fan-in) sobre partes disjuntas del código.
+
+## Referencias
+
+- [Anthropic — How We Built Our Multi-Agent Research System](https://www.anthropic.com/engineering/built-multi-agent-research-system) — Detalla la delegación orquestador-worker con contextos acotados y resúmenes comprimidos de retorno.
+- [OpenAI — A Practical Guide to Building Agents (Manager Pattern)](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — Describe cómo delegar subtareas especializadas a sub-agentes acotados.
+- [Anthropic — Building Effective Agents (Orchestrator-Workers)](https://www.anthropic.com/engineering/building-effective-agents) — Referencia canónica sobre descomposición dinámica de tareas y síntesis de workers en paralelo.

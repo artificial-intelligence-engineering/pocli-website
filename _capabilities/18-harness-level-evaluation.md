@@ -24,3 +24,9 @@ Implemented via `pocli e2e` (`src/runtime/headless-runner.ts`), `pocli tui-test`
 ### Pending / Roadmap
 
 Publishing reproducible longitudinal scorecards comparing harness releases across cost, latency, and defect-escape rates.
+
+## References
+
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Argues that evaluation must measure the entire agent harness and its cost, not just the base LLM.
+- [SWE-bench Verified (OpenAI & Princeton)](https://openai.com/index/introducing-swe-bench-verified/) — Human-validated end-to-end software engineering benchmark testing complete coding harnesses.
+- [Robot Framework — Acceptance Testing & RPA](https://robotframework.org/) — External black-box acceptance testing engine used by POCLI's autonomous QA harness.

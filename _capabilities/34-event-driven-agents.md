@@ -24,3 +24,9 @@ Not yet implemented. POCLI currently runs interactively through the TUI (`Comman
 ### Pending / Roadmap
 
 A daemon event bus supporting `fs.watch`, cron schedules, and webhook triggers wired into `PoCliOrchestrator`.
+
+## References
+
+- [Martin Fowler — What Do You Mean by 'Event-Driven'?](https://martinfowler.com/articles/201701-event-driven.html) — Clarifies event notification, event-carried state transfer, and reactive architectures.
+- [CloudEvents Specification (CNCF)](https://cloudevents.io/) — Standard format for describing external webhook and system events across runtimes.
+- [Node.js `fs.watch` Documentation](https://nodejs.org/api/fs.html#fswatchfilename-options-listener) — Native Linux `inotify` filesystem event watcher for reactive local triggers.

@@ -24,3 +24,9 @@ Partially implemented: the `AGENT` and `PROJECT` memory layers in `PoCliDatabase
 ### Pending / Roadmap
 
 Automated post-session reflection pipelines that distill recurring errors and verified fixes into structured episodic entries.
+
+## References
+
+- [Shinn et al. — Reflexion: Language Agents with Verbal Reinforcement Learning (arXiv:2303.11366)](https://arxiv.org/abs/2303.11366) — Demonstrates storing verbal episodic reflections from failures to improve future trials.
+- [Sumers et al. — Cognitive Architectures for Language Agents (CoALA, arXiv:2309.02427)](https://arxiv.org/abs/2309.02427) — Defines episodic memory as past event sequences informing future agent planning.
+- [Park et al. — Generative Agents (arXiv:2304.03442)](https://arxiv.org/abs/2304.03442) — Introduces observational memory streams and periodic high-level reflection.

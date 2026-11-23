@@ -24,3 +24,9 @@ Implemented in `LinuxAgentProcessRunner` (`src/runtime/process-runner.ts`), isol
 ### Pending / Roadmap
 
 Mandatory default `seccomp` filters and fine-grained per-tool network-deny policies even in lightweight local mode.
+
+## References
+
+- [Bubblewrap (`bwrap`) — Unprivileged Linux Sandboxing](https://github.com/containers/bubblewrap) — Lightweight Linux namespace sandbox (`--unshare-pid`, mount isolation) used by POCLI.
+- [Podman — Rootless OCI Containers](https://podman.io/) — Daemonless, rootless OCI container engine providing strong isolation for agent execution.
+- [Linux Kernel Documentation — Namespaces & Seccomp BPF](https://www.kernel.org/doc/html/latest/userspace-api/seccomp_filter.html) — Kernel primitives for restricting syscalls and process visibility in sandboxed environments.

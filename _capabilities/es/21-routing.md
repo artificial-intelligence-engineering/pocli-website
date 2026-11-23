@@ -25,3 +25,9 @@ Implementada en `src/core/workflow.ts` (máquina de estados SDLC de 8 fases + `A
 ### Pendiente / Hoja de ruta
 
 Definiciones configurables del grafo de flujo para que los equipos puedan personalizar o extender las 8 fases SDLC por defecto.
+
+## Referencias
+
+- [Anthropic — Building Effective Agents (Routing Workflow)](https://www.anthropic.com/engineering/building-effective-agents) — Define patrones de enrutamiento determinista que separan clasificación y ejecución especializada.
+- [David Harel — Statecharts: A Visual Formalism for Complex Systems](https://www.sciencedirect.com/science/article/pii/0167642387900359) — Paper fundacional sobre máquinas de estados deterministas para gobernar flujos complejos.
+- [Gary Marcus — Rebooting AI (Neuro-Symbolic Architecture)](https://www.penguinrandomhouse.com/books/603982/rebooting-ai-by-gary-marcus-and-ernest-davis/) — Defiende envolver modelos neuronales probabilísticos con reglas simbólicas explícitas y lógica de control.

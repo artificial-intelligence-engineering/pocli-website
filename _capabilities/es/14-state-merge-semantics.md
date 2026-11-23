@@ -25,3 +25,9 @@ Implementada en `PoCliCoordinator` (`src/runtime/coordinator.ts`), que actúa co
 ### Pendiente / Hoja de ruta
 
 Políticas de merge semántico a 3 vías para ediciones paralelas de archivos cuando se incorpore el fan-out concurrente de desarrolladores.
+
+## Referencias
+
+- [Martin Kleppmann — Designing Data-Intensive Applications (Concurrency & Transactions)](https://dataintensive.net/) — Referencia canónica sobre serialización de escritor único, concurrencia optimista y aislamiento.
+- [SQLite Isolation & Transactions](https://www.sqlite.org/isolation.html) — Detalla la semántica transaccional de SQLite y las garantías de bloqueo de escritor único.
+- [Optimistic Concurrency Control — Kung & Robinson (1981)](https://dl.acm.org/doi/10.1145/319566.319567) — Paper fundacional que define el control de concurrencia optimista mediante versiones.

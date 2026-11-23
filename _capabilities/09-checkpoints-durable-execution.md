@@ -24,3 +24,9 @@ Partially implemented: `PoCliDatabase` persists ACID turn state, SDLC phase prog
 ### Pending / Roadmap
 
 Mid-turn durable execution capable of resuming an interrupted multi-tool turn at the exact tool-call boundary.
+
+## References
+
+- [Temporal — What Is Durable Execution?](https://docs.temporal.io/evaluate/understanding-temporal#durable-execution) — Industry reference defining durable execution, checkpointed state, and crash-safe resumption.
+- [LangGraph — Persistence & Checkpointing Concepts](https://langchain-ai.github.io/langgraph/concepts/persistence/) — Explains graph-level checkpoints for pausing, resuming, and recovering agent workflows.
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Engineering patterns for checkpointing multi-session coding tasks safely.

@@ -25,3 +25,9 @@ Implementada parcialmente: `PersistentAgentRuntime` envía actualizaciones incre
 ### Pendiente / Hoja de ruta
 
 Streaming HTTP SSE nativo token a token en todos los adaptadores de proveedores y cancelación cooperativa limpia en mitad del streaming desde la TUI.
+
+## Referencias
+
+- [WHATWG HTML Standard — Server-Sent Events (SSE)](https://html.spec.whatwg.org/multipage/server-sent-events.html) — Protocolo estándar sobre el que se apoya el streaming token a token de LLMs por HTTP.
+- [JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification) — Protocolo RPC ligero usado por las notificaciones `agent.streamChunk` de los workers de POCLI.
+- [MDN Web Docs — `AbortController` & Cooperative Cancellation](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) — Primitiva estándar en JavaScript/Node.js para cancelar streams y tareas asíncronas limpiamente.

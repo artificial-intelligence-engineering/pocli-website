@@ -94,3 +94,9 @@ In POCLI, context assembly is not left to ad-hoc string concatenation or raw cha
 ### Pending / Roadmap
 
 Automatic provider-threshold compaction triggered transparently before context saturation without requiring manual `/compact`.
+
+## References
+
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Canonical guide on curating bounded, high-signal context per turn.
+- [Liu et al. — Lost in the Middle: How Language Models Use Long Contexts (arXiv:2307.03172)](https://arxiv.org/abs/2307.03172) — Empirical study showing LLM performance degrades when key facts sit in the middle of long prompts.
+- [Anthropic — Prompt Caching Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) — Explains cacheable static prefixes to reduce latency and token cost across turns.

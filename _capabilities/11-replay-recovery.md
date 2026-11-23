@@ -24,3 +24,9 @@ Not yet implemented. While `PoCliDatabase` already preserves the full append-onl
 ### Pending / Roadmap
 
 Implementing `pocli replay` and immutable turn snapshot branching/rewind across SQLite state and workspace files.
+
+## References
+
+- [Martin Fowler — Event Sourcing & Temporal Query](https://martinfowler.com/eaaDev/EventSourcing.html) — Explains reconstructing any historical state deterministically by replaying an event log.
+- [LangGraph — Time Travel & Rewind](https://langchain-ai.github.io/langgraph/concepts/time-travel/) — Practical pattern for rewinding and branching agent execution from past checkpoints.
+- [Temporal — Deterministic Replay](https://docs.temporal.io/encyclopedia/event-history) — How event histories enable exact execution replay and debugging after failures.

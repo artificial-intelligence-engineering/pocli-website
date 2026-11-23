@@ -25,3 +25,9 @@ Implementada mediante el comando `/compact` y la tabla `context_compactions` en 
 ### Pendiente / Hoja de ruta
 
 Disparo automático de la compactación cuando los tokens activos superen un umbral configurable de la ventana del modelo.
+
+## Referencias
+
+- [Anthropic — Effective Context Engineering for AI Agents (Compaction)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Detalla estrategias de compactación estructurada para preservar decisiones arquitectónicas en sesiones largas.
+- [Packer et al. — MemGPT: Towards LLMs as Operating Systems (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560) — Paper fundacional sobre gestión virtual de contexto y paginación/resumen fuera de la ventana activa.
+- [OpenAI — Conversation State & Compaction Guide](https://platform.openai.com/docs/guides/conversation-state) — Patrones prácticos para gestionar el estado de conversaciones largas dentro del presupuesto de contexto.

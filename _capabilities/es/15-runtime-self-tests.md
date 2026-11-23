@@ -25,3 +25,9 @@ Implementada con suites unitarias y de integración en Vitest, verificación end
 ### Pendiente / Hoja de ruta
 
 Pruebas continuas de regresión sobre todos los backends de sandbox Linux soportados (Bubblewrap y Podman) en CI.
+
+## Referencias
+
+- [Vitest — Next Generation Testing Framework](https://vitest.dev/) — Framework rápido de pruebas unitarias y de integración en TypeScript usado para verificar el runtime de POCLI.
+- [Martin Fowler — The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) — Guía clásica para equilibrar pruebas unitarias, de integración y end-to-end.
+- [Google Testing Blog — Just Say No to More End-to-End Tests](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html) — Explica cómo combinar tests deterministas rápidos por debajo de suites E2E.

@@ -24,3 +24,9 @@ Implemented with Vitest unit and integration suites, automated headless end-to-e
 ### Pending / Roadmap
 
 Continuous regression benchmarking across every supported Linux sandbox backend (Bubblewrap and Podman) in CI.
+
+## References
+
+- [Vitest — Next Generation Testing Framework](https://vitest.dev/) — Fast TypeScript unit and integration test runner used to verify POCLI's runtime.
+- [Martin Fowler — The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) — Classic guide balancing unit, integration, and end-to-end runtime verification.
+- [Google Testing Blog — Just Say No to More End-to-End Tests](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html) — Explains layering fast deterministic self-tests beneath slower E2E suites.

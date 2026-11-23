@@ -95,3 +95,9 @@ En POCLI, el ensamblado del contexto no se deja a concatenaciones ad-hoc ni a hi
 ### Pendiente / Hoja de ruta
 
 Compactación automática basada en umbrales del proveedor antes de saturar la ventana sin requerir `/compact` manual.
+
+## Referencias
+
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Guía de referencia sobre cómo curar un contexto acotado y de alta señal en cada turno.
+- [Liu et al. — Lost in the Middle: How Language Models Use Long Contexts (arXiv:2307.03172)](https://arxiv.org/abs/2307.03172) — Estudio empírico que demuestra la degradación de los LLMs cuando la información clave queda en mitad de prompts largos.
+- [Anthropic — Prompt Caching Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) — Explica el diseño de prefijos estáticos cacheables para reducir latencia y coste de tokens entre turnos.

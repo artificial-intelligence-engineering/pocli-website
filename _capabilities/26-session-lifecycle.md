@@ -24,3 +24,9 @@ Implemented in `src/core/lifecycle.ts` and `PersistentAgentRuntime` (`src/runtim
 ### Pending / Roadmap
 
 Idle worker hibernation timers to release RAM automatically during long pauses.
+
+## References
+
+- [Node.js Documentation — Child Processes & Signal Events](https://nodejs.org/api/child_process.html) — Reference for spawning, supervising, and cleanly terminating isolated worker processes.
+- [12-Factor App — Disposability (Fast Startup & Graceful Shutdown)](https://12factor.net/disposability) — Operational principles for clean process startup, pause, and SIGTERM teardown.
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Covers initializing, pausing, and resuming multi-session agent workflows reliably.

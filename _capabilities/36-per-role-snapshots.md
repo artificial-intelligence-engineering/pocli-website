@@ -24,3 +24,9 @@ Partially implemented: each role maintains isolated conversation streams and mem
 ### Pending / Roadmap
 
 Immutable point-in-time per-role snapshot diffs and visual inspection commands in the TUI.
+
+## References
+
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Explains inspecting exact per-role context windows to diagnose drift and context rot.
+- [SQLite Command-Line Shell & Inspection](https://www.sqlite.org/cli.html) — Foundation behind POCLI's `pocli db` REPL for querying per-role state snapshots directly.
+- [LangGraph — State Inspection & Checkpoints](https://langchain-ai.github.io/langgraph/concepts/persistence/) — Demonstrates capturing and inspecting immutable state snapshots across execution steps.

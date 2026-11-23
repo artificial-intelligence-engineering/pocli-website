@@ -25,3 +25,9 @@ Implementada en `PoCliDatabase` (`src/storage/database.ts`) y `PoCliCoordinator`
 ### Pendiente / Hoja de ruta
 
 Exportación del flujo de eventos append-only en formatos estándar JSONL / OpenTelemetry para pipelines externos de auditoría.
+
+## Referencias
+
+- [Martin Fowler — Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) — Patrón arquitectónico clásico que captura todos los cambios de estado como una secuencia inmutable de eventos.
+- [Jay Kreps — The Log: What Every Software Engineer Should Know About Real-Time Data's Unifying Abstraction](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying) — Análisis en profundidad de los logs append-only como base de durabilidad, auditoría y replicación.
+- [SQLite Write-Ahead Logging (WAL)](https://www.sqlite.org/wal.html) — Documentación técnica del modo WAL de SQLite para lecturas concurrentes y transacciones durables.

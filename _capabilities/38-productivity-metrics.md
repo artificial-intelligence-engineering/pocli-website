@@ -24,3 +24,9 @@ Partially implemented: `PmReporter` (`src/runtime/pm-reporter.ts`) generates sel
 ### Pending / Roadmap
 
 Longitudinal cycle-time, first-pass QA rate, and throughput analytics aggregated across multiple projects.
+
+## References
+
+- [DORA — Accelerate State of DevOps Metrics](https://dora.dev/guides/dora-metrics-four-keys/) — Industry standard engineering delivery metrics: lead time, deployment frequency, and change failure rate.
+- [Forsgren et al. — The SPACE of Developer Productivity (ACM Queue)](https://queue.acm.org/detail.cfm?id=3454124) — Holistic framework measuring engineering productivity beyond naive lines-of-code counts.
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Connects agent evaluation to real-world engineering throughput and cost-efficiency.

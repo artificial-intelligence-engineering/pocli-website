@@ -25,3 +25,9 @@ Implementada mediante la máquina de estados SDLC de 8 fases (`src/core/workflow
 ### Pendiente / Hoja de ruta
 
 Seguimiento granular por requisito individual (`REQ-001` → matriz de tests) enlazado directamente a commits de git.
+
+## Referencias
+
+- [Anthropic — Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Propone listas estructuradas de funcionalidades (`feature_list.json`) como primitiva de estado.
+- [Martin Fowler — Feature Toggles & Incremental Delivery](https://martinfowler.com/articles/feature-toggles.html) — Disciplina de ingeniería para rastrear estados discretos de funcionalidades hasta la entrega.
+- [SWE-bench — Evaluating Real-World Software Engineering](https://www.swebench.com/) — Benchmark centrado en la resolución verificable de incidencias respaldada por tests ejecutables.

@@ -24,3 +24,9 @@ Implemented in `LLMRouter` (`src/runtime/llm-router.ts`) with routing presets (`
 ### Pending / Roadmap
 
 Automated shadow/canary routing evaluations to tune candidate scoring empirically.
+
+## References
+
+- [Ong et al. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv:2406.18665)](https://arxiv.org/abs/2406.18665) — Research demonstrating dynamic routing between strong and fast/cheap models to cut cost without losing quality.
+- [Chen et al. — FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance (arXiv:2305.05176)](https://arxiv.org/abs/2305.05176) — Introduces LLM cascades and adaptive model selection strategies.
+- [Slivkins — Introduction to Multi-Armed Bandits (arXiv:1904.07272)](https://arxiv.org/abs/1904.07272) — Theoretical foundation for bandit-based adaptive routing under latency and reliability uncertainty.

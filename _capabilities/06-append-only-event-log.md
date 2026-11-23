@@ -24,3 +24,9 @@ Implemented in `PoCliDatabase` (`src/storage/database.ts`) and `PoCliCoordinator
 ### Pending / Roadmap
 
 Exporting the append-only event stream in standardized JSONL / OpenTelemetry event formats for external audit pipelines.
+
+## References
+
+- [Martin Fowler — Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) — Classic architectural pattern capturing all state changes as an immutable append-only sequence of events.
+- [Jay Kreps — The Log: What Every Software Engineer Should Know About Real-Time Data's Unifying Abstraction](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying) — Deep dive into append-only logs as the foundation for durability, auditing, and replication.
+- [SQLite Write-Ahead Logging (WAL)](https://www.sqlite.org/wal.html) — Technical documentation on SQLite WAL mode for concurrent reads and durable append-only transactions.

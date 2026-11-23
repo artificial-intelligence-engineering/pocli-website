@@ -24,3 +24,9 @@ Partially implemented: normative artifacts are strictly versioned in SQLite (`da
 ### Pending / Roadmap
 
 A unified per-turn provenance manifest recording the exact source IDs, byte ranges, and token counts of every block injected into the prompt.
+
+## References
+
+- [Gao et al. — AGREE: Adaptation for Grounding Enhancement (arXiv:2311.09533)](https://arxiv.org/abs/2311.09533) — Framework for strict self-citation, grounding verification, and unsupported statement detection.
+- [Lewis et al. — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (arXiv:2005.11401)](https://arxiv.org/abs/2005.11401) — Seminal RAG paper grounding model outputs in verifiable external document stores.
+- [W3C PROV-DM: The PROV Data Model](https://www.w3.org/TR/prov-dm/) — Canonical specification for modeling data provenance, entities, and derivation lineages.

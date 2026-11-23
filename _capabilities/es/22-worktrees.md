@@ -25,3 +25,9 @@ Todavía no implementada. POCLI aísla actualmente los proyectos por directorio 
 ### Pendiente / Hoja de ruta
 
 Aprovisionamiento automático de `git worktree`, gestión del ciclo de vida de ramas y limpieza para soportar workers de desarrollo en paralelo.
+
+## Referencias
+
+- [Git Official Documentation — `git-worktree`](https://git-scm.com/docs/git-worktree) — Referencia oficial para gestionar múltiples árboles de trabajo aislados ligados a un mismo repositorio.
+- [Anthropic — Claude Code Best Practices (Parallel Worktrees)](https://www.anthropic.com/engineering/claude-code-best-practices) — Flujo práctico para ejecutar múltiples agentes de código en paralelo usando Git worktrees.
+- [Pro Git Book — Branching & Repository Internals](https://git-scm.com/book/en/v2) — Referencia fundamental sobre el modelo de objetos de Git que permite checkouts paralelos sin duplicar historial.

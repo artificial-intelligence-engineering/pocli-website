@@ -25,3 +25,9 @@ Implementada parcialmente: `PmReporter` (`src/runtime/pm-reporter.ts`) genera in
 ### Pendiente / Hoja de ruta
 
 Analítica longitudinal de tiempo de ciclo, tasa de aprobación en primera pasada de QA y throughput agregado entre proyectos.
+
+## Referencias
+
+- [DORA — Accelerate State of DevOps Metrics](https://dora.dev/guides/dora-metrics-four-keys/) — Métricas estándar de entrega en ingeniería: lead time, frecuencia de despliegue y tasa de fallos.
+- [Forsgren et al. — The SPACE of Developer Productivity (ACM Queue)](https://queue.acm.org/detail.cfm?id=3454124) — Marco integral para medir la productividad en ingeniería más allá del conteo ingenuo de líneas de código.
+- [Kapoor et al. — AI Agents That Matter (arXiv:2407.01502)](https://arxiv.org/abs/2407.01502) — Conecta la evaluación de agentes con el rendimiento real de ingeniería y la eficiencia de costes.

@@ -24,3 +24,9 @@ Not yet implemented. POCLI currently isolates projects by workspace directory an
 ### Pending / Roadmap
 
 Automated `git worktree` provisioning, branch lifecycle management, and cleanup to support concurrent parallel developer workers.
+
+## References
+
+- [Git Official Documentation — `git-worktree`](https://git-scm.com/docs/git-worktree) — Official reference for managing multiple isolated working trees attached to a single repository.
+- [Anthropic — Claude Code Best Practices (Parallel Worktrees)](https://www.anthropic.com/engineering/claude-code-best-practices) — Practical workflow for running multiple isolated coding agents in parallel via Git worktrees.
+- [Pro Git Book — Branching & Repository Internals](https://git-scm.com/book/en/v2) — Foundational reference on Git's object model enabling zero-duplication parallel checkouts.

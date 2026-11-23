@@ -25,3 +25,9 @@ Implementada en `LLMRouter` (`src/runtime/llm-router.ts`) con control de cuotas 
 ### Pendiente / Hoja de ruta
 
 Backoff exponencial con jitter por error antes del failover y detección semántica de bucles atascados.
+
+## Referencias
+
+- [AWS Architecture Blog — Timeouts, Retries, and Backoff with Jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — Referencia canónica sobre estrategias resilientes de reintento y prevención de tormentas de peticiones.
+- [IETF RFC 9110 — HTTP Semantics (429 Too Many Requests / 503 Service Unavailable)](https://httpwg.org/specs/rfc9110.html) — Especificación estándar de códigos HTTP de límite de tasa y disponibilidad transitoria.
+- [Michael Nygard — Release It! (Stability Patterns)](https://pragprog.com/titles/mnee2/release-it-second-edition/) — Cubre timeouts, mamparos, circuit breakers y failover elegante.

@@ -25,3 +25,9 @@ Implementada mediante `PersistentAgentRuntime` (`src/runtime/persistent-runtime.
 ### Pendiente / Hoja de ruta
 
 Orquestación concurrente fan-out / fan-in con múltiples workers de desarrollo en paralelo.
+
+## Referencias
+
+- [Anthropic — How We Built Our Multi-Agent Research System](https://www.anthropic.com/engineering/built-multi-agent-research-system) — Reporte real de ingeniería detallando cuándo y cómo compensa la orquestación multi-agente.
+- [Cognition — Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents) — Contrapunto esencial que advierte contra la fragmentación del contexto y la mala coordinación.
+- [Hong et al. — MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework (arXiv:2308.00352)](https://arxiv.org/abs/2308.00352) — Codifica procedimientos estándar (SOPs) entre roles de Product Manager, Arquitecto, Ingeniero y QA.

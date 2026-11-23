@@ -24,3 +24,9 @@ Implemented in `PoCliCoordinator` (`src/runtime/coordinator.ts`), which acts as 
 ### Pending / Roadmap
 
 Semantic 3-way merge policies for parallel workspace file edits once concurrent developer fan-out is added.
+
+## References
+
+- [Martin Kleppmann — Designing Data-Intensive Applications (Concurrency & Transactions)](https://dataintensive.net/) — Canonical engineering reference on single-writer serialization, optimistic concurrency, and isolation.
+- [SQLite Isolation & Transactions](https://www.sqlite.org/isolation.html) — Details SQLite transactional semantics and single-writer locking guarantees.
+- [Optimistic Concurrency Control — Kung & Robinson (1981)](https://dl.acm.org/doi/10.1145/319566.319567) — Foundational paper defining version-checked optimistic concurrency control.

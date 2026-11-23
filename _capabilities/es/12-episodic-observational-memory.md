@@ -25,3 +25,9 @@ Implementada parcialmente: las capas de memoria `AGENT` y `PROJECT` en `PoCliDat
 ### Pendiente / Hoja de ruta
 
 Pipelines automáticos de reflexión post-sesión que destilen errores recurrentes y soluciones verificadas en entradas episódicas estructuradas.
+
+## Referencias
+
+- [Shinn et al. — Reflexion: Language Agents with Verbal Reinforcement Learning (arXiv:2303.11366)](https://arxiv.org/abs/2303.11366) — Demuestra cómo almacenar reflexiones episódicas verbales de fallos para mejorar intentos futuros.
+- [Sumers et al. — Cognitive Architectures for Language Agents (CoALA, arXiv:2309.02427)](https://arxiv.org/abs/2309.02427) — Define la memoria episódica como secuencias de eventos pasados que informan la planificación futura.
+- [Park et al. — Generative Agents (arXiv:2304.03442)](https://arxiv.org/abs/2304.03442) — Introduce flujos de memoria observacional y síntesis periódica de reflexiones.

@@ -24,3 +24,9 @@ Implemented in `LLMGateway` (`choiceMsg.tool_calls` merged with `extractToolCall
 ### Pending / Roadmap
 
 Passing full JSON Schema `tools[]` definitions natively in HTTP payloads for every provider adapter.
+
+## References
+
+- [OpenAI — Function Calling & Structured Outputs Guide](https://platform.openai.com/docs/guides/function-calling) — Industry reference for JSON Schema tool declarations and typed argument extraction.
+- [Anthropic — Tool Use with Claude](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview) — Best practices for deterministic tool contracts, error feedback, and schema design.
+- [JSON Schema Specification](https://json-schema.org/) — Standard vocabulary for annotating and validating structured JSON tool payloads.
