@@ -21,6 +21,9 @@ collections:
   team:
     output: true
     sort_by: weight
+  capabilities:
+    output: true
+    sort_by: cap_number
 
 defaults:
   - scope:
@@ -54,6 +57,18 @@ defaults:
       type: "team"
     values:
       layout: "team"
+      lang: "es"
+  - scope:
+      path: ""
+      type: "capabilities"
+    values:
+      layout: "capability"
+      lang: "en"
+  - scope:
+      path: "_capabilities/es"
+      type: "capabilities"
+    values:
+      layout: "capability"
       lang: "es"
 
 sass:

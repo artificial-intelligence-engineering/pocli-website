@@ -114,62 +114,62 @@ A governed harness can be organized into **five fundamental subsystems**. Mappin
 ### 4.1 Instructions
 *Rules, conventions, architecture, and steps the agent must follow (beyond `AGENTS.md` — everything telling the model what is true and what to do).*
 
-- **Capability #1 — Context management:** what enters the prompt and how it is assembled.
-- **Capability #2 — Structured compaction:** rules to preserve essential state across turns.
-- **Capability #3 — Tool discovery & JIT loading:** on-demand capability catalog.
-- **Capability #4 — Plugins & skills:** declarative instruction extensions.
-- **Capability #5 — Context provenance:** documented origin of every injected item.
-- **Capability #6 — Append-only event log:** immutable record of instructions received.
+- **[Capability #1](/capabilities/01-context-management/) — Context management:** what enters the prompt and how it is assembled.
+- **[Capability #2](/capabilities/02-structured-compaction/) — Structured compaction:** rules to preserve essential state across turns.
+- **[Capability #3](/capabilities/03-tool-discovery-jit/) — Tool discovery & JIT loading:** on-demand capability catalog.
+- **[Capability #4](/capabilities/04-plugins-skills/) — Plugins & skills:** declarative instruction extensions.
+- **[Capability #5](/capabilities/05-context-provenance/) — Context provenance:** documented origin of every injected item.
+- **[Capability #6](/capabilities/06-append-only-event-log/) — Append-only event log:** immutable record of instructions received.
 
 ### 4.2 State
 *Progress, decisions, modified files, and cross-session handoffs.*
 
-- **Capability #7 — Session persistence:** durable conversation storage.
-- **Capability #8 — Layered memory:** working, short-term, long-term, and episodic memory.
-- **Capability #9 — Checkpoints & durable execution:** resumable execution points.
-- **Capability #10 — Typed handoffs:** cross-session continuity contracts.
-- **Capability #11 — Replay & recovery:** deterministic state reconstruction.
-- **Capability #12 — Episodic / observational memory:** historical behavioral tracking.
-- **Capability #13 — Feature state tracking:** `feature_list.json` / artifact state as a primitive.
-- **Capability #14 — State merge semantics:** deterministic write-combination rules.
+- **[Capability #7](/capabilities/07-session-persistence/) — Session persistence:** durable conversation storage.
+- **[Capability #8](/capabilities/08-layered-memory/) — Layered memory:** working, short-term, long-term, and episodic memory.
+- **[Capability #9](/capabilities/09-checkpoints-durable-execution/) — Checkpoints & durable execution:** resumable execution points.
+- **[Capability #10](/capabilities/10-typed-handoffs/) — Typed handoffs:** cross-session continuity contracts.
+- **[Capability #11](/capabilities/11-replay-recovery/) — Replay & recovery:** deterministic state reconstruction.
+- **[Capability #12](/capabilities/12-episodic-observational-memory/) — Episodic / observational memory:** historical behavioral tracking.
+- **[Capability #13](/capabilities/13-feature-state-tracking/) — Feature state tracking:** `feature_list.json` / artifact state as a primitive.
+- **[Capability #14](/capabilities/14-state-merge-semantics/) — State merge semantics:** deterministic write-combination rules.
 
 ### 4.3 Verification
 *Tests, lint, type-checking, smoke tests, and empirical validation.*
 
-- **Capability #15 — Runtime self-tests:** the harness tests itself.
-- **Capability #16 — Agent evals:** measuring model quality.
-- **Capability #17 — Failure routing / rollback:** what happens when verification fails.
-- **Capability #18 — Harness-level evaluation:** measuring the complete system.
+- **[Capability #15](/capabilities/15-runtime-self-tests/) — Runtime self-tests:** the harness tests itself.
+- **[Capability #16](/capabilities/16-agent-evals/) — Agent evals:** measuring model quality.
+- **[Capability #17](/capabilities/17-failure-routing-rollback/) — Failure routing / rollback:** what happens when verification fails.
+- **[Capability #18](/capabilities/18-harness-level-evaluation/) — Harness-level evaluation:** measuring the complete system.
 
 ### 4.4 Scope
 *Boundaries on what the agent may touch and task sizing.*
 
-- **Capability #19 — Safe execution / sandboxing:** OS-level boundaries on what can run.
-- **Capability #20 — Approvals & permissions:** gates requiring explicit Product Owner sign-off.
-- **Capability #21 — Routing:** which execution path is taken and which is blocked.
-- **Capability #22 — Worktrees:** physical workspace isolation.
-- **Capability #23 — Scope control:** strict bounds on task size and editable files.
+- **[Capability #19](/capabilities/19-safe-execution-sandboxing/) — Safe execution / sandboxing:** OS-level boundaries on what can run.
+- **[Capability #20](/capabilities/20-approvals-permissions/) — Approvals & permissions:** gates requiring explicit Product Owner sign-off.
+- **[Capability #21](/capabilities/21-routing/) — Routing:** which execution path is taken and which is blocked.
+- **[Capability #22](/capabilities/22-worktrees/) — Worktrees:** physical workspace isolation.
+- **[Capability #23](/capabilities/23-scope-control/) — Scope control:** strict bounds on task size and editable files.
 
 ### 4.5 Session Lifecycle
 *Initialization, execution, cleanup, persistence, and resumption.*
 
-- **Capability #24 — Error recovery:** graceful handling of transient failures.
-- **Capability #25 — Streaming & cancellation:** in-flight output lifecycle.
-- **Capability #26 — Session lifecycle:** start, pause, resume, and teardown.
-- **Capability #27 — Bootstrap / preflight:** the `initialize` phase.
+- **[Capability #24](/capabilities/24-error-recovery/) — Error recovery:** graceful handling of transient failures.
+- **[Capability #25](/capabilities/25-streaming-cancellation/) — Streaming & cancellation:** in-flight output lifecycle.
+- **[Capability #26](/capabilities/26-session-lifecycle/) — Session lifecycle:** start, pause, resume, and teardown.
+- **[Capability #27](/capabilities/27-bootstrap-preflight/) — Bootstrap / preflight:** the `initialize` phase.
 
 ### 4.6 Pure Operational Runtime Layer (Outside the 5 Pillars)
 *The underlying **"service layer"** assumed by the 5-pillar governance model:*
 
-- **Capability #28 — Agent loop:** the core execution mechanism itself.
-- **Capability #29 — Model gateway:** LLM provider abstraction.
-- **Capability #30 — Typed tool calling:** the agent ↔ world interface.
-- **Capability #31 — Observability:** cross-cutting telemetry and logs.
-- **Capability #32 — Cost tracking:** token and spend accounting.
-- **Capability #33 — Multi-agent orchestration:** coordinating multiple specialized agents.
-- **Capability #34 — Event-driven agents:** reactive event handling.
-- **Capability #35 — Sub-agent delegation:** spawning focused sub-tasks.
-- **Capability #36 — Per-role snapshots:** role-specific state inspection.
-- **Capability #37 — Adaptive model routing:** dynamic model selection per task.
-- **Capability #38 — Productivity metrics:** delivery throughput measurement.
-- **Capability #39 — Capability seams:** provider architecture rather than a functional pillar.
+- **[Capability #28](/capabilities/28-agent-loop/) — Agent loop:** the core execution mechanism itself.
+- **[Capability #29](/capabilities/29-model-gateway/) — Model gateway:** LLM provider abstraction.
+- **[Capability #30](/capabilities/30-typed-tool-calling/) — Typed tool calling:** the agent ↔ world interface.
+- **[Capability #31](/capabilities/31-observability/) — Observability:** cross-cutting telemetry and logs.
+- **[Capability #32](/capabilities/32-cost-tracking/) — Cost tracking:** token and spend accounting.
+- **[Capability #33](/capabilities/33-multi-agent-orchestration/) — Multi-agent orchestration:** coordinating multiple specialized agents.
+- **[Capability #34](/capabilities/34-event-driven-agents/) — Event-driven agents:** reactive event handling.
+- **[Capability #35](/capabilities/35-sub-agent-delegation/) — Sub-agent delegation:** spawning focused sub-tasks.
+- **[Capability #36](/capabilities/36-per-role-snapshots/) — Per-role snapshots:** role-specific state inspection.
+- **[Capability #37](/capabilities/37-adaptive-model-routing/) — Adaptive model routing:** dynamic model selection per task.
+- **[Capability #38](/capabilities/38-productivity-metrics/) — Productivity metrics:** delivery throughput measurement.
+- **[Capability #39](/capabilities/39-capability-seams/) — Capability seams:** provider architecture rather than a functional pillar.
