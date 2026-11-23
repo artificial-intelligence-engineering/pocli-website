@@ -1,0 +1,81 @@
+---
+layout: default
+bodyClass: "page-basic"
+---
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign all_caps = site.capabilities | where: "lang", current_lang | sort: "cap_number" %}
+{% assign prev_cap = nil %}
+{% assign next_cap = nil %}
+{% for item in all_caps %}
+  {% if item.cap_number == page.cap_number %}
+    {% assign prev_index = forloop.index0 | minus: 1 %}
+    {% assign next_index = forloop.index0 | plus: 1 %}
+    {% if prev_index >= 0 %}
+      {% assign prev_cap = all_caps[prev_index] %}
+    {% endif %}
+    {% if next_index < all_caps.size %}
+      {% assign next_cap = all_caps[next_index] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-9 col-lg-8">
+      <div class="capability-page">
+        <div class="capability-breadcrumb">
+          {% if current_lang == 'es' %}
+          <a href="{{ '/es/about/#4-los-5-subsistemas-fundamentales-y-el-mapeo-de-capacidades' | relative_url }}">&larr; Volver a Arquitectura e Investigación</a>
+          {% else %}
+          <a href="{{ '/about/#4-the-5-fundamental-subsystems--capability-mapping' | relative_url }}">&larr; Back to Architecture &amp; Research</a>
+          {% endif %}
+        </div>
+
+        <div class="capability-meta">
+          <span class="capability-pillar">{{ page.subsystem }}</span>
+          {% if page.status == 'implemented' %}
+            <span class="capability-status capability-status--implemented">
+              <span class="capability-status-dot"></span>
+              {% if current_lang == 'es' %}Implementada en POCLI{% else %}Implemented in POCLI{% endif %}
+            </span>
+          {% elsif page.status == 'partial' %}
+            <span class="capability-status capability-status--partial">
+              <span class="capability-status-dot"></span>
+              {% if current_lang == 'es' %}Implementada parcialmente{% else %}Partially Implemented{% endif %}
+            </span>
+          {% else %}
+            <span class="capability-status capability-status--pending">
+              <span class="capability-status-dot"></span>
+              {% if current_lang == 'es' %}Todavía no implementada{% else %}Not Yet Implemented{% endif %}
+            </span>
+          {% endif %}
+        </div>
+
+        <h1 class="title">{{ page.title }}</h1>
+
+        <div class="content">
+          {{ content }}
+        </div>
+
+        <nav class="capability-nav" aria-label="Capability navigation">
+          <div class="capability-nav-prev">
+            {% if prev_cap %}
+            <a href="{{ prev_cap.url | relative_url }}">
+              <span class="capability-nav-label">{% if current_lang == 'es' %}&larr; Anterior{% else %}&larr; Previous{% endif %}</span>
+              <span class="capability-nav-title">{{ prev_cap.title }}</span>
+            </a>
+            {% endif %}
+          </div>
+          <div class="capability-nav-next">
+            {% if next_cap %}
+            <a href="{{ next_cap.url | relative_url }}">
+              <span class="capability-nav-label">{% if current_lang == 'es' %}Siguiente &rarr;{% else %}Next &rarr;{% endif %}</span>
+              <span class="capability-nav-title">{{ next_cap.title }}</span>
+            </a>
+            {% endif %}
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
