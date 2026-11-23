@@ -1,0 +1,102 @@
+// Styled tables for content pages (including Architecture & Research: about / es/about)
+
+.page-basic .content {
+  table {
+    width: 100%;
+    margin: 24px 0 32px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: $white;
+    border: 1px solid #e5d6da;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(47, 47, 65, 0.06);
+    overflow: hidden;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: $steel;
+
+    thead {
+      background-color: $black;
+      color: $white;
+
+      th {
+        padding: 13px 16px;
+        text-align: left;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: none;
+        border-bottom: 3px solid $primary;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        vertical-align: middle;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background-color 0.15s ease;
+
+        &:nth-child(even) {
+          background-color: #fffcfd;
+        }
+
+        &:hover {
+          background-color: #fff3f5;
+        }
+
+        &:last-child td {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        padding: 13px 16px;
+        vertical-align: top;
+        border: none;
+        border-bottom: 1px solid #f0e3e6;
+        border-right: 1px solid #f0e3e6;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &:first-child {
+          background-color: #f6f7fa;
+          color: $black;
+          font-weight: 600;
+          border-right: 2px solid #e2d8dc;
+        }
+      }
+
+      tr:hover td:first-child {
+        background-color: #fcecef;
+      }
+    }
+
+    &.table-comparison {
+      tbody {
+        td:first-child {
+          background-color: transparent;
+          color: $steel;
+          font-weight: normal;
+          border-right: 1px solid #f0e3e6;
+        }
+
+        tr:hover td:first-child {
+          background-color: transparent;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

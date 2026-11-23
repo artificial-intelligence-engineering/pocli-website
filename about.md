@@ -85,6 +85,7 @@ deductive reasoning                     transformers)
 | Symbolic component *"reasons / verifies"* | Deterministic gates (`AuthorityGuard`), tests, linters, tool calls |
 | Architecture decides the boundary | Pipeline design: file selection, call graphs, phase gates |
 | Failure mode: bad symbol extraction breaks rules | Failure mode: a buggy filter (e.g., `is_source_file`) drops the real file |
+{: .table-comparison}
 
 ### 3.2 Gary Marcus's Position on Claude Code
 

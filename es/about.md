@@ -87,6 +87,7 @@ Prolog, razonamiento deductivo           (LLMs, CNNs, transformers)
 | El componente simbólico *"razona / verifica"* | Gates deterministas (`AuthorityGuard`), tests, linters y tool calls |
 | La arquitectura decide qué va a cada lado | Diseño del pipeline: selección de ficheros, call graphs, gates de fase |
 | Fallo: un símbolo mal extraído rompe todo | Fallo: un filtro defectuoso (ej. `is_source_file`) descarta el fichero real |
+{: .table-comparison}
 
 ### 3.2 La postura de Gary Marcus sobre Claude Code
 
